@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Inspired by Cal AI iOS — Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #FFFFFF;
+    --surface-1: #F5F5F5;
+    --surface-2: #EBEBEB;
+    --surface-3: #E0E0E0;
+    --divider: #EAEAEA;
+    --text: #0A0A0A;
+    --text-secondary: #5E5E5E;
+    --text-tertiary: #9A9A9A;
+    --protein: #0F7FD8;
+    --carbs: #D68B1A;
+    --fat: #E04968;
+    --success: #1E9E55;
+    --warning: #D68B1A;
+    --destructive: #D74242;
+    --ai-accent: #5B5DD1;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #F0F0F0; color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  body { padding: 48px 24px 80px; }
+  .page { max-width: 1120px; margin: 0 auto; }
+  .tabular { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+
+  .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+  .page-title { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
+  .page-chip { background: var(--text); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.3px; text-transform: uppercase; }
+  .page-subtitle { color: var(--text-secondary); font-size: 15px; max-width: 640px; margin-bottom: 40px; line-height: 1.5; }
+
+  .grid { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .phone { width: 320px; height: 720px; border-radius: 48px; background: #1C1C1E; padding: 12px; margin: 0 auto; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.4), 0 0 0 2px rgba(255,255,255,0.05) inset; position: sticky; top: 24px; }
+  .phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--canvas); position: relative; display: flex; flex-direction: column; }
+  .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #000; border-radius: 14px; z-index: 5; }
+
+  .app-nav { padding: 52px 16px 12px; display: flex; align-items: center; justify-content: space-between; }
+  .app-title { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--protein), var(--ai-accent)); border: 1px solid var(--divider); }
+
+  .scroll-body { flex: 1; overflow-y: auto; padding: 0 16px 100px; }
+
+  .hero-card { background: var(--surface-1); border-radius: 24px; padding: 20px; margin-bottom: 16px; }
+  .hero-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 6px; }
+  .hero-number { font-size: 56px; font-weight: 700; letter-spacing: -1.2px; line-height: 1; margin-bottom: 4px; color: var(--text); }
+  .hero-sub { font-size: 13px; color: var(--text-secondary); font-weight: 500; margin-bottom: 16px; }
+  .progress-bar { height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+  .progress-fill { height: 100%; width: 62%; background: var(--text); border-radius: 3px; }
+
+  .macro-row { display: flex; justify-content: space-between; gap: 8px; }
+  .macro-col { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
+  .macro-ring-wrap { position: relative; width: 64px; height: 64px; }
+  .macro-ring-wrap svg { transform: rotate(-90deg); }
+  .macro-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; }
+  .macro-val { font-size: 15px; font-weight: 700; }
+  .macro-val .u { font-size: 9px; font-weight: 500; color: var(--text-secondary); margin-left: 1px; }
+  .macro-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; color: var(--text-secondary); text-transform: uppercase; }
+
+  .meal-card { background: var(--canvas); border: 1px solid var(--divider); border-radius: 20px; overflow: hidden; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+  .meal-photo { aspect-ratio: 16/10; position: relative; }
+  .meal-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%); }
+  .meal-photo.m1 { background: linear-gradient(135deg, #B0D49A 0%, #7FB06B 50%, #4F7E48 100%); }
+  .meal-photo.m2 { background: linear-gradient(135deg, #F5D593 0%, #D6A35A 50%, #A87432 100%); }
+  .meal-info { padding: 14px 16px; }
+  .meal-title { font-size: 16px; font-weight: 600; letter-spacing: -0.15px; margin-bottom: 2px; }
+  .meal-meta { font-size: 12px; color: var(--text-secondary); font-weight: 500; margin-bottom: 10px; }
+  .meal-stats { display: flex; align-items: center; justify-content: space-between; }
+  .macro-chips { display: flex; gap: 6px; }
+  .chip-p, .chip-c, .chip-f { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 10px; }
+  .chip-p { background: rgba(15,127,216,0.12); color: var(--protein); }
+  .chip-c { background: rgba(214,139,26,0.14); color: var(--carbs); }
+  .chip-f { background: rgba(224,73,104,0.12); color: var(--fat); }
+  .meal-cal { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
+
+  .ai-card { background: linear-gradient(135deg, #F9F9FB, var(--surface-2)); border-radius: 20px; padding: 16px; margin-bottom: 12px; position: relative; overflow: hidden; border: 1px solid var(--divider); }
+  .ai-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--protein), var(--ai-accent), var(--fat)); }
+  .ai-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: var(--ai-accent); text-transform: uppercase; margin-bottom: 8px; }
+  .ai-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .ai-items { font-size: 13px; color: var(--text-secondary); font-weight: 500; margin-bottom: 12px; line-height: 1.6; }
+  .ai-items .conf { color: var(--text-tertiary); font-size: 11px; margin-left: 4px; }
+
+  .tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 84px; background: rgba(255,255,255,0.95); backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-around; padding: 8px 12px 22px; border-top: 0.5px solid var(--divider); }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--text-tertiary); font-size: 10px; font-weight: 600; }
+  .tab.active { color: var(--text); }
+  .tab svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
+  .tab.active svg { fill: currentColor; stroke: currentColor; }
+  .fab { position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%); width: 58px; height: 58px; border-radius: 50%; background: var(--text); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .fab-inner { width: 44px; height: 44px; border-radius: 50%; background: transparent; border: 2px solid #fff; }
+  .tab-slot-placeholder { width: 48px; }
+
+  .section { background: var(--canvas); border: 1px solid var(--divider); border-radius: 20px; padding: 24px; margin-bottom: 24px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 16px; }
+
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border-radius: 14px; padding: 14px; min-height: 84px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 600; font-family: 'SF Mono', Menlo, monospace; border: 1px solid var(--divider); }
+  .swatch .name { font-size: 12px; font-weight: 600; font-family: var(--font); margin-bottom: 2px; }
+  .swatch.dark { color: #fff; }
+
+  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--divider); }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--text-secondary); width: 200px; flex-shrink: 0; }
+  .type-sample { flex: 1; }
+  .t-72 { font-size: 56px; font-weight: 700; letter-spacing: -1.2px; line-height: 1; }
+  .t-40 { font-size: 36px; font-weight: 700; letter-spacing: -0.7px; line-height: 1; }
+  .t-28 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
+  .t-22 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .t-17 { font-size: 17px; font-weight: 600; letter-spacing: -0.15px; }
+  .t-15 { font-size: 15px; font-weight: 400; }
+  .t-13 { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+  .t-11 { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-secondary); }
+
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font); font-size: 16px; font-weight: 600; padding: 16px 28px; border-radius: 28px; border: none; cursor: pointer; }
+  .btn-primary { background: var(--text); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--surface-3); }
+  .btn-destructive { background: transparent; color: var(--destructive); font-weight: 600; }
+  .btn-chip { background: var(--surface-1); color: var(--text); padding: 8px 14px; font-size: 13px; font-weight: 600; border-radius: 16px; }
+  .btn-chip.active { background: var(--text); color: #fff; }
+  .fab-demo { width: 68px; height: 68px; border-radius: 50%; background: var(--text); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.18); cursor: pointer; border: none; }
+  .fab-demo > div { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #fff; }
+
+  .rings-row { display: flex; gap: 20px; align-items: center; justify-content: center; }
+  .ring-lg { width: 110px; height: 110px; position: relative; }
+  .ring-lg svg { transform: rotate(-90deg); }
+  .ring-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+  .ring-inner .v { font-size: 18px; font-weight: 700; color: var(--text); }
+  .ring-inner .l { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-secondary); }
+
+  .radius-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .radius-box { width: 72px; height: 72px; background: var(--text); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'SF Mono', Menlo, monospace; font-size: 11px; }
+  .r-8 { border-radius: 8px; }
+  .r-14 { border-radius: 14px; }
+  .r-20 { border-radius: 20px; }
+  .r-24 { border-radius: 24px; }
+  .r-28 { border-radius: 28px; }
+  .r-full { border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <div class="page-title">Cal AI iOS — Design Tokens</div>
+    <div class="page-chip">Light · Secondary</div>
+  </div>
+  <p class="page-subtitle">Light-mode variant — white canvas, black CTAs, macro trio accents tuned for light backgrounds. Dark is the primary Cal AI experience.</p>
+
+  <div class="grid">
+    <div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="island"></div>
+          <div class="app-nav">
+            <div class="app-title">Today</div>
+            <div class="avatar"></div>
+          </div>
+          <div class="scroll-body">
+            <div class="hero-card">
+              <div class="hero-label">Today · Remaining</div>
+              <div class="hero-number tabular">1,353</div>
+              <div class="hero-sub">kcal of 2,200 goal</div>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <div class="macro-row">
+                <div class="macro-col">
+                  <div class="macro-ring-wrap">
+                    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" stroke="#E0E0E0" stroke-width="5" fill="none"/><circle cx="32" cy="32" r="26" stroke="#0F7FD8" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="55"/></svg>
+                  </div>
+                  <div class="macro-val tabular">112<span class="u">g</span></div>
+                  <div class="macro-label">Protein</div>
+                </div>
+                <div class="macro-col">
+                  <div class="macro-ring-wrap">
+                    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" stroke="#E0E0E0" stroke-width="5" fill="none"/><circle cx="32" cy="32" r="26" stroke="#D68B1A" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40"/></svg>
+                  </div>
+                  <div class="macro-val tabular">198<span class="u">g</span></div>
+                  <div class="macro-label">Carbs</div>
+                </div>
+                <div class="macro-col">
+                  <div class="macro-ring-wrap">
+                    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" stroke="#E0E0E0" stroke-width="5" fill="none"/><circle cx="32" cy="32" r="26" stroke="#E04968" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="95"/></svg>
+                  </div>
+                  <div class="macro-val tabular">62<span class="u">g</span></div>
+                  <div class="macro-label">Fat</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-card">
+              <div class="ai-line"></div>
+              <div class="ai-badge">◆ AI Detected</div>
+              <div class="ai-title">Grilled Chicken Bowl</div>
+              <div class="ai-items">
+                Chicken breast <span class="conf">98%</span><br/>
+                Brown rice <span class="conf">94%</span><br/>
+                Broccoli, avocado <span class="conf">89%</span>
+              </div>
+              <div style="display:flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary" style="padding: 12px 20px; font-size: 14px;">Save to today</button>
+                <button class="btn btn-destructive">Reject</button>
+              </div>
+            </div>
+
+            <div class="meal-card">
+              <div class="meal-photo m1"></div>
+              <div class="meal-info">
+                <div class="meal-title">Overnight Oats</div>
+                <div class="meal-meta">8:05 AM · 1 serving</div>
+                <div class="meal-stats">
+                  <div class="macro-chips">
+                    <span class="chip-p">P 14</span>
+                    <span class="chip-c">C 58</span>
+                    <span class="chip-f">F 11</span>
+                  </div>
+                  <div class="meal-cal tabular">362</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-bar">
+            <div class="tab active"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>History</span></div>
+            <div class="tab-slot-placeholder"></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg><span>Insights</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>Profile</span></div>
+          </div>
+          <div class="fab"><div class="fab-inner"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title">Color Palette — Light</div>
+        <div class="swatches">
+          <div class="swatch" style="background:#FFFFFF;"><div class="name">Canvas</div>#FFFFFF</div>
+          <div class="swatch" style="background:#F5F5F5;"><div class="name">Surface 1</div>#F5F5F5</div>
+          <div class="swatch" style="background:#EBEBEB;"><div class="name">Surface 2</div>#EBEBEB</div>
+          <div class="swatch" style="background:#E0E0E0;"><div class="name">Surface 3</div>#E0E0E0</div>
+          <div class="swatch dark" style="background:#0A0A0A;"><div class="name">Ink / CTA</div>#0A0A0A</div>
+          <div class="swatch" style="background:#5E5E5E; color:#fff;"><div class="name">Secondary</div>#5E5E5E</div>
+          <div class="swatch dark" style="background:#0F7FD8;"><div class="name">Protein</div>#0F7FD8</div>
+          <div class="swatch dark" style="background:#D68B1A;"><div class="name">Carbs</div>#D68B1A</div>
+          <div class="swatch dark" style="background:#E04968;"><div class="name">Fat</div>#E04968</div>
+          <div class="swatch dark" style="background:#5B5DD1;"><div class="name">AI Accent</div>#5B5DD1</div>
+          <div class="swatch dark" style="background:#1E9E55;"><div class="name">Success</div>#1E9E55</div>
+          <div class="swatch dark" style="background:#D74242;"><div class="name">Destructive</div>#D74242</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Typography — Inter · tabular numerals</div>
+        <div class="type-row"><div class="type-meta">Daily Hero · 72pt · 700</div><div class="type-sample t-72 tabular">1,353</div></div>
+        <div class="type-row"><div class="type-meta">Meal Cals · 40pt · 700</div><div class="type-sample t-40 tabular">487</div></div>
+        <div class="type-row"><div class="type-meta">Screen Title · 28pt · 700</div><div class="type-sample t-28">Today</div></div>
+        <div class="type-row"><div class="type-meta">Section · 22pt · 700</div><div class="type-sample t-22">Recently logged</div></div>
+        <div class="type-row"><div class="type-meta">Card Title · 17pt · 600</div><div class="type-sample t-17">Grilled Chicken Bowl</div></div>
+        <div class="type-row"><div class="type-meta">Body · 15pt · 400</div><div class="type-sample t-15">Tap the capture button to log a meal</div></div>
+        <div class="type-row"><div class="type-meta">Meta · 13pt · 500</div><div class="type-sample t-13 tabular">12:30 PM · 1 serving</div></div>
+        <div class="type-row"><div class="type-meta">Label · 11pt · 700 UP</div><div class="type-sample t-11">Protein</div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Macro Rings — 6pt stroke, rounded caps</div>
+        <div class="rings-row">
+          <div style="position: relative;">
+            <div class="ring-lg">
+              <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="46" stroke="#E0E0E0" stroke-width="6" fill="none"/><circle cx="55" cy="55" r="46" stroke="#0F7FD8" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="95"/></svg>
+            </div>
+            <div class="ring-inner"><span class="v tabular">112g</span><span class="l">Protein</span></div>
+          </div>
+          <div style="position: relative;">
+            <div class="ring-lg">
+              <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="46" stroke="#E0E0E0" stroke-width="6" fill="none"/><circle cx="55" cy="55" r="46" stroke="#D68B1A" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="68"/></svg>
+            </div>
+            <div class="ring-inner"><span class="v tabular">198g</span><span class="l">Carbs</span></div>
+          </div>
+          <div style="position: relative;">
+            <div class="ring-lg">
+              <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="46" stroke="#E0E0E0" stroke-width="6" fill="none"/><circle cx="55" cy="55" r="46" stroke="#E04968" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="165"/></svg>
+            </div>
+            <div class="ring-inner"><span class="v tabular">62g</span><span class="l">Fat</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Buttons · Capture FAB</div>
+        <div class="btn-row">
+          <button class="btn btn-primary">Scan a meal</button>
+          <button class="btn btn-secondary">Add manually</button>
+          <button class="btn btn-destructive">Delete</button>
+          <button class="btn btn-chip active">Today</button>
+          <button class="btn btn-chip">Week</button>
+          <button class="fab-demo"><div></div></button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Corner Radius Scale</div>
+        <div class="radius-row">
+          <div class="radius-box r-8">8</div>
+          <div class="radius-box r-14">14</div>
+          <div class="radius-box r-20">20</div>
+          <div class="radius-box r-24">24</div>
+          <div class="radius-box r-28">28</div>
+          <div class="radius-box r-full">Full</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

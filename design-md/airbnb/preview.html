@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Inspired by Airbnb iOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #FFFFFF;
+    --surface-gray: #F7F7F7;
+    --surface-gray-2: #EBEBEB;
+    --divider: #EBEBEB;
+    --hof: #484848;
+    --foggy: #767676;
+    --foggy-light: #B0B0B0;
+    --ink: #222222;
+    --coral: #FF385C;
+    --coral-pressed: #E31C5F;
+    --rausch: #FF5A5F;
+    --babu: #00A699;
+    --arches: #FC642D;
+    --beach: #FFB400;
+    --success: #008A05;
+    --error: #C13515;
+    --shadow-card: rgba(0,0,0,0.08);
+    --shadow-float: rgba(0,0,0,0.12);
+    --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #F2F2F2; color: var(--hof); font-family: var(--font); font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  body { padding: 48px 24px 80px; }
+  .page { max-width: 1200px; margin: 0 auto; }
+
+  .page-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .page-title { font-size: 32px; font-weight: 800; letter-spacing: -0.6px; color: var(--ink); }
+  .page-chip { background: var(--coral); color: #FFF; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.3px; text-transform: uppercase; }
+  .page-subtitle { color: var(--foggy); font-size: 16px; max-width: 720px; margin-bottom: 40px; line-height: 1.5; }
+
+  .grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  /* Phone */
+  .phone { width: 340px; height: 720px; border-radius: 48px; background: #0a0a0a; padding: 12px; margin: 0 auto; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6), 0 0 0 2px rgba(0,0,0,0.2) inset; position: sticky; top: 24px; }
+  .phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--canvas); position: relative; display: flex; flex-direction: column; }
+  .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #000; border-radius: 14px; z-index: 10; }
+
+  .status { height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px 0 24px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .scroll-body { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+  /* Search pill */
+  .search-wrap { padding: 8px 16px 14px; }
+  .search-pill { display: flex; align-items: center; height: 56px; border-radius: 500px; background: #FFF; border: 0.5px solid var(--divider); padding: 0 8px 0 20px; gap: 12px; box-shadow: 0 4px 12px var(--shadow-card), 0 1px 2px rgba(0,0,0,0.04); }
+  .search-icon { color: var(--ink); }
+  .search-icon svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+  .search-texts { flex: 1; line-height: 1.1; }
+  .search-top { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .search-sub { font-size: 11px; color: var(--foggy); margin-top: 2px; }
+  .search-filter { width: 36px; height: 36px; border-radius: 18px; border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; }
+  .search-filter svg { width: 14px; height: 14px; stroke: var(--ink); stroke-width: 2; fill: none; }
+
+  /* Category bar */
+  .cat-bar { height: 70px; display: flex; gap: 28px; padding: 8px 16px 0; border-bottom: 0.5px solid var(--divider); overflow-x: auto; scrollbar-width: none; }
+  .cat-bar::-webkit-scrollbar { display: none; }
+  .cat { display: flex; flex-direction: column; align-items: center; color: #717171; position: relative; padding-bottom: 12px; flex-shrink: 0; cursor: pointer; }
+  .cat svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+  .cat-label { font-size: 11px; font-weight: 500; margin-top: 6px; letter-spacing: 0.1px; }
+  .cat.active { color: var(--ink); }
+  .cat.active::after { content: ''; position: absolute; bottom: 0; left: -4px; right: -4px; height: 2px; background: var(--ink); }
+
+  /* Stay cards */
+  .stay-list { flex: 1; padding: 16px; overflow-y: auto; scrollbar-width: none; }
+  .stay-list::-webkit-scrollbar { display: none; }
+  .stay { margin-bottom: 24px; }
+  .photo { width: 100%; aspect-ratio: 4/3; border-radius: 16px; position: relative; overflow: hidden; }
+  .photo-reyk { background: linear-gradient(145deg, #8FB2C4 0%, #5C7D91 40%, #33454E 100%); }
+  .photo-reyk::before { content: ''; position: absolute; top: 12%; left: 8%; right: 8%; bottom: 28%; background: #2A363E; border-radius: 8px; box-shadow: 2px 3px 0 #1A232A; }
+  .photo-reyk::after { content: ''; position: absolute; bottom: 14%; left: 10%; right: 10%; height: 22%; background: linear-gradient(180deg, #6A8599 0%, #4A5F6B 100%); border-radius: 2px; }
+  .photo-joshua { background: linear-gradient(160deg, #F5C58E 0%, #E6A06B 40%, #A0553B 100%); }
+  .photo-joshua::before { content: ''; position: absolute; top: 35%; left: 10%; right: 10%; bottom: 18%; background: #F2E9D7; border-radius: 2px 2px 8px 8px; }
+  .photo-joshua::after { content: ''; position: absolute; top: 28%; left: 12%; width: 20%; height: 8%; background: #C27F5A; border-radius: 50% 50% 0 0; box-shadow: 36% 0 0 #C27F5A, 72% 0 0 #C27F5A; }
+  .heart { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25)); }
+  .heart svg { width: 22px; height: 22px; }
+  .heart.saved path { fill: var(--coral); stroke: var(--coral); stroke-width: 1.2; }
+  .heart.unsaved path { fill: rgba(0,0,0,0.35); stroke: #FFF; stroke-width: 1.8; }
+  .dots { position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; gap: 4px; }
+  .dot { width: 6px; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.55); }
+  .dot.active { background: #FFF; }
+
+  .rating-row { display: flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 13px; }
+  .rating-star { width: 12px; height: 12px; fill: var(--hof); }
+  .rating-num { font-weight: 500; color: var(--hof); }
+  .rating-count { color: var(--foggy); }
+  .stay-title { font-size: 15px; font-weight: 500; color: var(--hof); margin-top: 2px; }
+  .stay-host { font-size: 14px; color: var(--foggy); margin-top: 2px; }
+  .stay-dates { font-size: 14px; color: var(--foggy); margin-top: 6px; }
+  .stay-price { margin-top: 4px; }
+  .stay-price .num { font-weight: 700; color: var(--hof); font-size: 15px; }
+  .stay-price .per { color: var(--hof); font-size: 15px; }
+
+  /* Tab bar */
+  .tab-bar { height: 68px; display: flex; align-items: flex-start; padding: 8px 4px 16px; justify-content: space-around; background: rgba(255,255,255,0.96); backdrop-filter: saturate(180%) blur(20px); border-top: 0.5px solid var(--divider); }
+  .tab { display: flex; flex-direction: column; align-items: center; color: #717171; font-size: 10px; font-weight: 500; gap: 3px; letter-spacing: 0.1px; }
+  .tab.active { color: var(--coral); }
+  .tab svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
+  .tab.active svg { fill: currentColor; }
+
+  /* Token sections */
+  .section { background: #FFF; border: 1px solid var(--divider); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--foggy); margin-bottom: 20px; }
+
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border-radius: 12px; padding: 16px; min-height: 100px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 600; font-family: 'SF Mono', Menlo, monospace; border: 1px solid var(--divider); color: #FFF; }
+  .swatch .name { font-size: 12px; font-weight: 600; font-family: var(--font); margin-bottom: 2px; }
+  .swatch.light { color: var(--ink); }
+
+  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--divider); }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--foggy); width: 220px; flex-shrink: 0; }
+  .type-sample { flex: 1; color: var(--hof); }
+  .t-32 { font-size: 32px; font-weight: 800; letter-spacing: -0.4px; color: var(--ink); }
+  .t-26 { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; color: var(--ink); }
+  .t-22 { font-size: 22px; font-weight: 700; letter-spacing: -0.2px; }
+  .t-18 { font-size: 18px; font-weight: 700; }
+  .t-16 { font-size: 16px; font-weight: 400; }
+  .t-15m { font-size: 15px; font-weight: 500; }
+  .t-14 { font-size: 14px; font-weight: 400; color: var(--foggy); }
+  .t-12 { font-size: 12px; font-weight: 500; }
+
+  /* Buttons */
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { font-family: var(--font); font-weight: 700; cursor: pointer; border: none; letter-spacing: 0; }
+  .btn-primary { background: var(--coral); color: #FFF; font-size: 16px; padding: 14px 28px; border-radius: 8px; }
+  .btn-primary:active { background: var(--coral-pressed); transform: scale(0.98); }
+  .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); font-size: 14px; font-weight: 500; padding: 12px 20px; border-radius: 8px; }
+  .btn-pill { background: #FFF; color: var(--ink); border: 1px solid var(--ink); font-size: 14px; font-weight: 500; padding: 10px 18px; border-radius: 500px; box-shadow: 0 2px 8px var(--shadow-float); }
+  .btn-text { background: transparent; color: var(--ink); font-size: 14px; font-weight: 500; padding: 12px 0; text-decoration: underline; border: none; cursor: pointer; }
+
+  /* Map bubble */
+  .map-row { display: flex; gap: 12px; align-items: center; }
+  .bubble { font-family: var(--font); font-weight: 700; font-size: 14px; padding: 6px 10px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+  .bubble-default { background: #FFF; color: var(--ink); }
+  .bubble-visited { background: var(--ink); color: #FFF; }
+  .bubble-selected { background: var(--coral); color: #FFF; }
+
+  /* Radius scale */
+  .radius-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .radius-box { width: 76px; height: 76px; background: var(--coral); color: #FFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'SF Mono', Menlo, monospace; font-size: 11px; }
+  .r-0 { border-radius: 0; }
+  .r-4 { border-radius: 4px; }
+  .r-8 { border-radius: 8px; }
+  .r-12 { border-radius: 12px; }
+  .r-16 { border-radius: 16px; }
+  .r-24 { border-radius: 24px; }
+  .r-pill { border-radius: 500px; }
+  .r-circle { border-radius: 50%; }
+
+  /* Belo logomark */
+  .belo { display: inline-block; width: 44px; height: 48px; }
+  .belo svg { width: 100%; height: 100%; fill: var(--rausch); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <span class="belo">
+      <svg viewBox="0 0 32 32"><path d="M16 1c-3.5 0-6.4 2.6-7 6-.2 1.3 0 2.6.4 3.8 1.2 3.4 3.6 6.5 5.4 9.5 1.1 1.8 1.9 3.5 1.9 5.4 0 .8-.7 1.3-1.4 1.3s-1.4-.5-1.4-1.3c0-.9-.4-1.9-.9-2.9-.5.8-.9 1.9-.9 2.9 0 2.3 1.9 4 4.2 4s4.2-1.7 4.2-4c0-2-.8-3.7-1.9-5.4-1.8-3-4.2-6.1-5.4-9.5-.4-1.1-.5-2.2-.3-3.4.4-2.3 2.3-4 4.8-4s4.4 1.7 4.8 4c.2 1.1.1 2.3-.3 3.4-1.2 3.4-3.6 6.5-5.4 9.5l-.2.3c.8 1.4 1.5 2.8 1.8 4.3 2-3.2 4.2-6.2 5.4-9.4.4-1.2.6-2.5.4-3.8-.6-3.4-3.5-6-7-6z"/></svg>
+    </span>
+    <div class="page-title">Airbnb iOS — Design Tokens</div>
+    <div class="page-chip">Light</div>
+  </div>
+  <p class="page-subtitle">White canvas, photography as hero. Primary Coral (#FF385C) carries the Reserve CTA, save-heart fill, and category underline. Rausch (#FF5A5F) lives on the Belo logomark as the heritage red. Cereal at weights 400/500/700/800.</p>
+
+  <div class="grid">
+
+    <div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><span>●●● ▢</span></div>
+
+          <div class="search-wrap">
+            <div class="search-pill">
+              <div class="search-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+              <div class="search-texts">
+                <div class="search-top">Where to?</div>
+                <div class="search-sub">Anywhere · Any week · Add guests</div>
+              </div>
+              <div class="search-filter"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="#FFF"/><circle cx="15" cy="12" r="2" fill="#FFF"/><circle cx="9" cy="18" r="2" fill="#FFF"/></svg></div>
+            </div>
+          </div>
+
+          <div class="cat-bar">
+            <div class="cat active"><svg viewBox="0 0 24 24"><path d="M9 22V12h6v10"/><path d="M3 10l9-8 9 8v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><div class="cat-label">Cabins</div></div>
+            <div class="cat"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12H3z"/><path d="M9 21v-6h6v6"/></svg><div class="cat-label">Amazing views</div></div>
+            <div class="cat"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 6 9 10 9 10s9-4 9-10a9 9 0 0 0-9-9z"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-label">Tropical</div></div>
+            <div class="cat"><svg viewBox="0 0 24 24"><path d="M3 12c4-2 8-2 12 0s8 2 8 2"/><path d="M3 18c4-2 8-2 12 0s8 2 8 2"/><path d="M3 6c4-2 8-2 12 0s8 2 8 2"/></svg><div class="cat-label">Beachfront</div></div>
+            <div class="cat"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="5"/><path d="M12 15v6M9 20h6"/></svg><div class="cat-label">Design</div></div>
+            <div class="cat"><svg viewBox="0 0 24 24"><path d="M5 20V10l7-6 7 6v10"/><path d="M9 20v-5h6v5"/><circle cx="18" cy="6" r="2"/></svg><div class="cat-label">Mansions</div></div>
+          </div>
+
+          <div class="stay-list">
+            <div class="stay">
+              <div class="photo photo-reyk">
+                <div class="heart saved"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+              </div>
+              <div class="rating-row">
+                <svg class="rating-star" viewBox="0 0 24 24"><polygon points="12,2 15.1,8.4 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.4"/></svg>
+                <span class="rating-num">4.92</span><span class="rating-count"> · 324</span>
+              </div>
+              <div class="stay-title">Private room in Reykjavík</div>
+              <div class="stay-host">Hosted by Sigrún · Superhost</div>
+              <div class="stay-dates">Oct 12 – 17</div>
+              <div class="stay-price"><span class="num">$214</span> <span class="per">night</span></div>
+            </div>
+
+            <div class="stay">
+              <div class="photo photo-joshua">
+                <div class="heart unsaved"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+              </div>
+              <div class="rating-row">
+                <svg class="rating-star" viewBox="0 0 24 24"><polygon points="12,2 15.1,8.4 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.4"/></svg>
+                <span class="rating-num">4.87</span><span class="rating-count"> · 1,284</span>
+              </div>
+              <div class="stay-title">Dome in Joshua Tree</div>
+              <div class="stay-host">Hosted by Marion · 3 yrs hosting</div>
+              <div class="stay-dates">Nov 3 – 8</div>
+              <div class="stay-price"><span class="num">$326</span> <span class="per">night</span></div>
+            </div>
+          </div>
+
+          <div class="tab-bar">
+            <div class="tab active"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span>Explore</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Wishlists</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><path d="M3 12l18-9-5 18-3-8-10-1z"/></svg><span>Trips</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Inbox</span></div>
+            <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M6 19c1-3 3.5-4 6-4s5 1 6 4"/></svg><span>Profile</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title">Color Palette</div>
+        <div class="swatches">
+          <div class="swatch" style="background:#FF385C;"><div class="name">Primary Coral</div>#FF385C</div>
+          <div class="swatch" style="background:#E31C5F;"><div class="name">Coral Pressed</div>#E31C5F</div>
+          <div class="swatch" style="background:#FF5A5F;"><div class="name">Rausch (heritage)</div>#FF5A5F</div>
+          <div class="swatch" style="background:#00A699;"><div class="name">Babu</div>#00A699</div>
+          <div class="swatch" style="background:#FC642D;"><div class="name">Arches</div>#FC642D</div>
+          <div class="swatch" style="background:#FFB400; color:#222;"><div class="name">Beach (star)</div>#FFB400</div>
+          <div class="swatch" style="background:#484848;"><div class="name">Hof (text)</div>#484848</div>
+          <div class="swatch" style="background:#767676;"><div class="name">Foggy (text 2)</div>#767676</div>
+          <div class="swatch" style="background:#222222;"><div class="name">Ink</div>#222222</div>
+          <div class="swatch light" style="background:#FFFFFF;"><div class="name">Canvas</div>#FFFFFF</div>
+          <div class="swatch light" style="background:#F7F7F7;"><div class="name">Surface Gray</div>#F7F7F7</div>
+          <div class="swatch light" style="background:#EBEBEB;"><div class="name">Divider</div>#EBEBEB</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Typography — Airbnb Cereal (Plus Jakarta Sans fallback)</div>
+        <div class="type-row"><div class="type-meta">Large Nav · 32pt · 800</div><div class="type-sample t-32">Explore</div></div>
+        <div class="type-row"><div class="type-meta">Hero Title · 26pt · 700</div><div class="type-sample t-26">Ocean-view villa in Bali</div></div>
+        <div class="type-row"><div class="type-meta">Section · 22pt · 700</div><div class="type-sample t-22">Where you'll sleep</div></div>
+        <div class="type-row"><div class="type-meta">Subsection · 18pt · 700</div><div class="type-sample t-18">Meet your host</div></div>
+        <div class="type-row"><div class="type-meta">Body · 16pt · 400</div><div class="type-sample t-16">A private room in a quiet neighborhood, 10 minutes from the harbor.</div></div>
+        <div class="type-row"><div class="type-meta">Card Title · 15pt · 500</div><div class="type-sample t-15m">Private room in Reykjavík</div></div>
+        <div class="type-row"><div class="type-meta">Meta · 14pt · 400</div><div class="type-sample t-14">Hosted by Sigrún · Superhost</div></div>
+        <div class="type-row"><div class="type-meta">Chip · 12pt · 500</div><div class="type-sample t-12">Amazing views</div></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Buttons</div>
+        <div class="btn-row">
+          <button class="btn btn-primary">Reserve</button>
+          <button class="btn btn-outline">Continue</button>
+          <button class="btn btn-pill">Map</button>
+          <button class="btn-text">Show all 24 photos</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Map Price Bubbles</div>
+        <div class="map-row">
+          <div class="bubble bubble-default">$214</div>
+          <div class="bubble bubble-visited">$198</div>
+          <div class="bubble bubble-selected">$326</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Corner Radius Scale</div>
+        <div class="radius-row">
+          <div class="radius-box r-0">0</div>
+          <div class="radius-box r-4">4</div>
+          <div class="radius-box r-8">8</div>
+          <div class="radius-box r-12">12</div>
+          <div class="radius-box r-16">16</div>
+          <div class="radius-box r-24">24</div>
+          <div class="radius-box r-pill">Pill</div>
+          <div class="radius-box r-circle">Circle</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Rating Row Primitive</div>
+        <div class="rating-row" style="font-size: 15px;">
+          <svg class="rating-star" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><polygon points="12,2 15.1,8.4 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.4"/></svg>
+          <span class="rating-num">4.92</span>
+          <span class="rating-count"> · 324 reviews</span>
+        </div>
+        <p style="margin-top: 12px; font-size: 13px; color: var(--foggy);">Star is <code>#484848</code> on cards (dark gray, not yellow). Yellow <code>#FFB400</code> appears only on review-detail screens.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
