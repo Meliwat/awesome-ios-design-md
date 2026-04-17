@@ -68,7 +68,7 @@ Each app folder includes:
 | `DESIGN-swiftui.md` | SwiftUI implementation code |
 | `DESIGN-expo.md` | Expo / React Native implementation code |
 | `README.md` | Pack overview, signature moves, brand sources |
-| `preview.html` | Redirects to the interactive gallery at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
+| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ### How to Use
 
