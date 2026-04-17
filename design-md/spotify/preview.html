@@ -3,295 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System Inspired by Spotify iOS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Preview — Awesome iOS DESIGN.md</title>
+<meta http-equiv="refresh" content="0; url=https://www.spectr.to/gallery">
+<link rel="canonical" href="https://www.spectr.to/gallery">
 <style>
-  :root {
-    --canvas: #121212;
-    --surface-1: #181818;
-    --surface-2: #282828;
-    --surface-3: #3E3E3E;
-    --divider: #2A2A2A;
-    --text: #FFFFFF;
-    --text-secondary: #B3B3B3;
-    --text-tertiary: #6A6A6A;
-    --green: #1DB954;
-    --green-pressed: #169C46;
-    --logo-green: #1ED760;
-    --error: #F15E6C;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: #000; color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
-  body { padding: 48px 24px 80px; }
-  .page { max-width: 1120px; margin: 0 auto; }
-
-  .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
-  .page-title { font-size: 28px; font-weight: 700; letter-spacing: -0.6px; }
-  .page-chip { background: var(--green); color: #000; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.3px; text-transform: uppercase; }
-  .page-subtitle { color: var(--text-secondary); font-size: 15px; max-width: 640px; margin-bottom: 40px; line-height: 1.5; }
-
-  .grid { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-
-  /* Phone */
-  .phone { width: 320px; height: 680px; border-radius: 48px; background: #0a0a0a; padding: 12px; margin: 0 auto; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.9), 0 0 0 2px rgba(255,255,255,0.06) inset; position: sticky; top: 24px; }
-  .phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--canvas); position: relative; display: flex; flex-direction: column; }
-  .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #000; border-radius: 14px; z-index: 5; }
-
-  /* Now Playing gradient background */
-  .np-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, #7C4A9E 0%, #4A2D5F 30%, var(--canvas) 70%); }
-
-  .app-nav { padding: 52px 16px 12px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
-  .np-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); }
-  .np-from { font-size: 13px; font-weight: 600; }
-
-  .scroll-body { flex: 1; padding: 16px; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-
-  .album-art { width: 240px; height: 240px; border-radius: 6px; background: linear-gradient(135deg, #A06CC9 0%, #6E2E8F 50%, #3B1555 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.6); margin-bottom: 32px; position: relative; overflow: hidden; }
-  .album-art::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 60%); }
-
-  .track-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 4px; text-align: center; }
-  .track-artist { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; text-align: center; }
-
-  .scrubber { width: 100%; margin-bottom: 12px; }
-  .scrubber-track { height: 4px; border-radius: 2px; background: var(--text-tertiary); position: relative; }
-  .scrubber-fill { height: 100%; width: 60%; background: var(--text); border-radius: 2px; position: relative; }
-  .scrubber-thumb { position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; border-radius: 50%; background: var(--text); }
-  .scrubber-times { display: flex; justify-content: space-between; margin-top: 6px; font-size: 10px; font-weight: 500; color: var(--text-secondary); }
-
-  .actions { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 8px; }
-  .actions .act-icon { color: var(--text-secondary); }
-  .actions .act-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
-  .actions .liked { color: var(--green); fill: var(--green); }
-  .play-btn { width: 60px; height: 60px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(29,185,84,0.35); }
-  .play-btn svg { width: 26px; height: 26px; fill: #000; }
-
-  .next-prev { color: var(--text); }
-  .next-prev svg { width: 26px; height: 26px; fill: currentColor; }
-
-  /* Mini bar + tab bar */
-  .mini-bar { background: var(--surface-2); height: 52px; display: flex; align-items: center; padding: 0 12px; gap: 10px; margin: 0 8px 4px; border-radius: 6px; }
-  .mini-art { width: 36px; height: 36px; border-radius: 4px; background: linear-gradient(135deg, #A06CC9, #3B1555); }
-  .mini-text { flex: 1; }
-  .mini-title { font-size: 13px; font-weight: 600; }
-  .mini-artist { font-size: 11px; color: var(--text-secondary); }
-  .mini-icon { color: var(--text); }
-  .mini-icon svg { width: 20px; height: 20px; fill: currentColor; }
-
-  .tab-bar { height: 60px; background: rgba(18,18,18,0.92); backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-around; padding: 4px 8px 14px; border-top: 0.5px solid var(--divider); }
-  .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--text-secondary); font-size: 10px; font-weight: 700; }
-  .tab.active { color: var(--text); }
-  .tab svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
-  .tab.active svg { fill: currentColor; stroke: currentColor; }
-
-  /* Token sections */
-  .section { background: var(--surface-1); border: 1px solid var(--divider); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 16px; }
-
-  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .swatch { border-radius: 10px; padding: 16px; min-height: 90px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 600; font-family: 'SF Mono', Menlo, monospace; border: 1px solid var(--divider); color: #fff; }
-  .swatch .name { font-size: 12px; font-weight: 600; font-family: var(--font); margin-bottom: 2px; }
-  .swatch.light { color: #000; }
-
-  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--divider); }
-  .type-row:last-child { border-bottom: none; }
-  .type-meta { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--text-secondary); width: 210px; flex-shrink: 0; }
-  .type-sample { flex: 1; }
-  .t-28 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
-  .t-22 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
-  .t-16 { font-size: 16px; font-weight: 600; }
-  .t-15 { font-size: 15px; font-weight: 400; }
-  .t-14 { font-size: 14px; font-weight: 400; color: var(--text-secondary); }
-  .t-11 { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-secondary); }
-
-  /* Buttons */
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .btn { font-family: var(--font); font-size: 16px; font-weight: 700; padding: 10px 32px; border-radius: 500px; border: none; cursor: pointer; letter-spacing: 0; }
-  .btn-primary { background: var(--green); color: #000; }
-  .btn-primary:active { background: var(--green-pressed); transform: scale(0.97); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--text-secondary); font-size: 14px; font-weight: 600; padding: 10px 20px; }
-  .play-btn-demo { width: 60px; height: 60px; border-radius: 50%; background: var(--green); display: inline-flex; align-items: center; justify-content: center; border: none; cursor: pointer; }
-  .play-btn-demo svg { width: 26px; height: 26px; fill: #000; }
-  .chip { padding: 8px 16px; background: var(--surface-2); color: var(--text); font-size: 14px; font-weight: 600; border-radius: 500px; }
-  .chip.active { background: var(--text); color: #000; }
-
-  /* Track row demo */
-  .row { display: flex; align-items: center; padding: 12px 0; gap: 12px; border-bottom: 1px solid var(--divider); }
-  .row:last-child { border-bottom: none; }
-  .row-art { width: 44px; height: 44px; border-radius: 4px; background: linear-gradient(135deg, #A06CC9, #3B1555); flex-shrink: 0; }
-  .row-art.r2 { background: linear-gradient(135deg, #E8B572, #C26B27); }
-  .row-art.r3 { background: linear-gradient(135deg, #79B8FF, #2B5CB8); }
-  .row-info { flex: 1; }
-  .row-title { font-size: 15px; font-weight: 600; }
-  .row-title.playing { color: var(--green); }
-  .row-artist { font-size: 13px; color: var(--text-secondary); }
-  .row-artist.playing { color: var(--green); }
-  .row-more { color: var(--text-secondary); }
-  .row-more svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
-
-  /* Equalizer */
-  .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 18px; margin-right: 4px; }
-  .eq-bar { width: 3px; background: var(--green); border-radius: 1px; animation: eq 1s ease-in-out infinite; }
-  .eq-bar:nth-child(1) { animation-delay: 0s; height: 60%; }
-  .eq-bar:nth-child(2) { animation-delay: 0.3s; height: 90%; }
-  .eq-bar:nth-child(3) { animation-delay: 0.6s; height: 40%; }
-  @keyframes eq { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
-
-  /* Radius */
-  .radius-row { display: flex; gap: 16px; flex-wrap: wrap; }
-  .radius-box { width: 72px; height: 72px; background: var(--green); color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'SF Mono', Menlo, monospace; font-size: 11px; }
-  .r-0 { border-radius: 0; }
-  .r-4 { border-radius: 4px; }
-  .r-6 { border-radius: 6px; }
-  .r-8 { border-radius: 8px; }
-  .r-12 { border-radius: 12px; }
-  .r-full { border-radius: 500px; }
-  .r-circle { border-radius: 50%; }
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 24px;
+  }
+  a {
+    color: #0A84FF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover { text-decoration: underline; }
+  p { color: #6B7280; }
 </style>
 </head>
 <body>
-<div class="page">
-
-  <div class="page-header">
-    <div class="page-title">Spotify iOS — Design Tokens</div>
-    <div class="page-chip">Dark</div>
-  </div>
-  <p class="page-subtitle">Dark canvas (#121212), Spotify Green as the single accent. Album art drives the Now Playing gradient via dynamic extraction.</p>
-
-  <div class="grid">
-
-    <div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="np-gradient"></div>
-          <div class="island"></div>
-          <div class="app-nav">
-            <div>
-              <div class="np-label">Playing from Playlist</div>
-              <div class="np-from">Mellow Mornings</div>
-            </div>
-            <div style="color: #fff;">⋯</div>
-          </div>
-          <div class="scroll-body">
-            <div class="album-art"></div>
-            <div class="track-title">Midnight Wavelength</div>
-            <div class="track-artist">Nova Palmer</div>
-            <div class="scrubber">
-              <div class="scrubber-track"><div class="scrubber-fill"><div class="scrubber-thumb"></div></div></div>
-              <div class="scrubber-times"><span>2:14</span><span>3:32</span></div>
-            </div>
-            <div class="actions">
-              <div class="act-icon liked"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div class="next-prev"><svg viewBox="0 0 24 24"><polygon points="19,20 9,12 19,4"/><rect x="5" y="4" width="2" height="16"/></svg></div>
-              <button class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></button>
-              <div class="next-prev"><svg viewBox="0 0 24 24"><polygon points="5,4 15,12 5,20"/><rect x="17" y="4" width="2" height="16"/></svg></div>
-              <div class="act-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 15,14"/></svg></div>
-            </div>
-          </div>
-          <div class="mini-bar">
-            <div class="mini-art"></div>
-            <div class="mini-text">
-              <div class="mini-title">Midnight Wavelength</div>
-              <div class="mini-artist">Nova Palmer</div>
-            </div>
-            <div class="mini-icon"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></div>
-          </div>
-          <div class="tab-bar">
-            <div class="tab active"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zm6 0h4v16h-4zm6 0h4v16h-4z"/></svg><span>Library</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.8l-6.3 4.2L8 13.8l-6-4.4h7.6z"/></svg><span>Premium</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="section">
-        <div class="section-title">Color Palette</div>
-        <div class="swatches">
-          <div class="swatch" style="background:#121212;"><div class="name">Canvas</div>#121212</div>
-          <div class="swatch" style="background:#181818;"><div class="name">Surface 1</div>#181818</div>
-          <div class="swatch" style="background:#282828;"><div class="name">Surface 2</div>#282828</div>
-          <div class="swatch" style="background:#3E3E3E;"><div class="name">Surface 3</div>#3E3E3E</div>
-          <div class="swatch" style="background:#2A2A2A;"><div class="name">Divider</div>#2A2A2A</div>
-          <div class="swatch light" style="background:#FFFFFF;"><div class="name">Text Primary</div>#FFFFFF</div>
-          <div class="swatch" style="background:#B3B3B3; color:#000;"><div class="name">Text Secondary</div>#B3B3B3</div>
-          <div class="swatch" style="background:#6A6A6A;"><div class="name">Text Tertiary</div>#6A6A6A</div>
-          <div class="swatch" style="background:#1DB954;"><div class="name">Spotify Green</div>#1DB954</div>
-          <div class="swatch" style="background:#1ED760;"><div class="name">Logo Green</div>#1ED760</div>
-          <div class="swatch" style="background:#169C46;"><div class="name">Green Pressed</div>#169C46</div>
-          <div class="swatch" style="background:#F15E6C;"><div class="name">Error</div>#F15E6C</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Typography — Spotify Mix</div>
-        <div class="type-row"><div class="type-meta">Screen Title · 28pt · 700</div><div class="type-sample t-28">Your Library</div></div>
-        <div class="type-row"><div class="type-meta">Section / Now Playing · 22pt · 700</div><div class="type-sample t-22">Midnight Wavelength</div></div>
-        <div class="type-row"><div class="type-meta">Track Title · 16pt · 600</div><div class="type-sample t-16">Blinding Lights</div></div>
-        <div class="type-row"><div class="type-meta">Body · 15pt · 400</div><div class="type-sample t-15">Tap an album cover to start listening</div></div>
-        <div class="type-row"><div class="type-meta">Artist / Sub · 14pt · 400</div><div class="type-sample t-14">The Weeknd</div></div>
-        <div class="type-row"><div class="type-meta">Label · 11pt · 700 UP</div><div class="type-sample t-11">Made for you</div></div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Buttons</div>
-        <div class="btn-row">
-          <button class="play-btn-demo"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></button>
-          <button class="btn btn-primary">Follow</button>
-          <button class="btn btn-outline">Following</button>
-          <div class="chip active">Music</div>
-          <div class="chip">Podcasts</div>
-          <div class="chip">Audiobooks</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Track Rows (playing = green)</div>
-        <div class="row">
-          <div class="row-art"></div>
-          <div class="row-info">
-            <div class="row-title playing"><span class="eq"><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span></span>Midnight Wavelength</div>
-            <div class="row-artist playing">Nova Palmer</div>
-          </div>
-          <div class="row-more"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/></svg></div>
-        </div>
-        <div class="row">
-          <div class="row-art r2"></div>
-          <div class="row-info">
-            <div class="row-title">Slow Amber</div>
-            <div class="row-artist">Kellen Voss</div>
-          </div>
-          <div class="row-more"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/></svg></div>
-        </div>
-        <div class="row">
-          <div class="row-art r3"></div>
-          <div class="row-info">
-            <div class="row-title">Coastline Drift</div>
-            <div class="row-artist">Hana Ruiz</div>
-          </div>
-          <div class="row-more"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/></svg></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Corner Radius Scale</div>
-        <div class="radius-row">
-          <div class="radius-box r-0">0</div>
-          <div class="radius-box r-4">4</div>
-          <div class="radius-box r-6">6</div>
-          <div class="radius-box r-8">8</div>
-          <div class="radius-box r-12">12</div>
-          <div class="radius-box r-full">Pill</div>
-          <div class="radius-box r-circle">Circle</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+  <h1>Preview moved</h1>
+  <p>Interactive previews now live on the Spectr gallery.</p>
+  <p><a href="https://www.spectr.to/gallery">Open www.spectr.to/gallery →</a></p>
 </div>
+<script>window.location.replace('https://www.spectr.to/gallery');</script>
 </body>
 </html>

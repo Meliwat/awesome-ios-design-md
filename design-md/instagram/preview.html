@@ -3,302 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System Inspired by Instagram iOS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<title>Preview — Awesome iOS DESIGN.md</title>
+<meta http-equiv="refresh" content="0; url=https://www.spectr.to/gallery">
+<link rel="canonical" href="https://www.spectr.to/gallery">
 <style>
-  :root {
-    --bg: #FFFFFF;
-    --text: #000000;
-    --text-secondary: #8E8E8E;
-    --separator: #DBDBDB;
-    --input-fill: #EFEFEF;
-    --action-blue: #0095F6;
-    --action-blue-pressed: #1877F2;
-    --destructive: #ED4956;
-    --link: #00376B;
-    --grad-1: #833AB4;
-    --grad-2: #FD1D1D;
-    --grad-3: #FCAF45;
-    --grad-4: #FFDC80;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica, Arial, sans-serif;
-    --logo-font: 'Dancing Script', cursive;
-    --radius-btn: 8px;
-    --radius-input: 10px;
-    --radius-bubble: 20px;
-    --gradient-brand: conic-gradient(from 45deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4), var(--grad-1));
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: #FAFAFA; color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
-  body { padding: 48px 24px 80px; }
-  .page { max-width: 1120px; margin: 0 auto; }
-
-  .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
-  .page-title { font-size: 28px; font-weight: 700; letter-spacing: -0.6px; }
-  .page-chip { background: var(--text); color: var(--bg); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.3px; text-transform: uppercase; }
-  .page-subtitle { color: var(--text-secondary); font-size: 15px; max-width: 640px; margin-bottom: 40px; line-height: 1.5; }
-
-  .grid { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-
-  /* iPhone frame */
-  .phone { width: 320px; height: 650px; border-radius: 48px; background: #1C1C1E; padding: 12px; margin: 0 auto; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.4), 0 0 0 2px rgba(255,255,255,0.05) inset; position: sticky; top: 24px; }
-  .phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--bg); position: relative; display: flex; flex-direction: column; }
-
-  .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #000; border-radius: 14px; z-index: 5; }
-
-  /* App nav */
-  .app-nav { height: 48px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; padding-top: 44px; padding-bottom: 6px; }
-  .app-logo { font-family: var(--logo-font); font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
-  .app-nav-actions { display: flex; gap: 16px; align-items: center; }
-  .icon { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; color: var(--text); }
-  .icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; fill: none; }
-
-  /* Stories rail */
-  .stories { display: flex; gap: 12px; padding: 10px 14px; overflow-x: auto; border-bottom: 0.5px solid var(--separator); }
-  .story { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; }
-  .story-ring { width: 56px; height: 56px; border-radius: 50%; padding: 2px; background: var(--gradient-brand); }
-  .story-ring.read { background: var(--separator); }
-  .story-ring-inner { width: 100%; height: 100%; border-radius: 50%; background: var(--bg); padding: 2px; }
-  .story-photo { width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(135deg, #FFD6C9, #FFE29A); }
-  .story-photo.p2 { background: linear-gradient(135deg, #C4CEFF, #C6FFE1); }
-  .story-photo.p3 { background: linear-gradient(135deg, #FFD9E5, #D6C4FF); }
-  .story-photo.p4 { background: linear-gradient(135deg, #E6E6E6, #B8B8B8); }
-  .story-label { font-size: 11px; color: var(--text); max-width: 56px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-  /* Feed post */
-  .post { display: flex; flex-direction: column; }
-  .post-header { height: 48px; display: flex; align-items: center; padding: 0 14px; gap: 10px; }
-  .post-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FFE29A, #FFD6C9); }
-  .post-username { font-size: 13px; font-weight: 600; flex: 1; }
-  .post-image { aspect-ratio: 1; background: linear-gradient(135deg, #FFD6C9 0%, #FFE29A 40%, #FDCAE0 80%, #CDB4FF 100%); position: relative; }
-  .post-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%); }
-  .action-bar { height: 44px; display: flex; align-items: center; padding: 0 14px; gap: 16px; }
-  .action-bar .save { margin-left: auto; }
-  .likes { padding: 0 14px; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
-  .caption { padding: 0 14px; font-size: 13px; line-height: 1.35; margin-bottom: 4px; }
-  .caption b { font-weight: 600; }
-  .caption-meta { padding: 0 14px; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
-
-  /* Tab bar */
-  .tab-bar { margin-top: auto; height: 49px; border-top: 0.5px solid var(--separator); background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-around; padding: 0 8px; }
-  .tab-icon { width: 26px; height: 26px; }
-  .tab-icon.reels { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .tab-avatar { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--text); background: linear-gradient(135deg, #FFD6C9, #FFE29A); }
-
-  /* Token sections */
-  .section { background: var(--bg); border: 1px solid var(--separator); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-  .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 16px; }
-
-  /* Swatches */
-  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .swatch { border-radius: 10px; padding: 16px; min-height: 90px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 600; font-family: 'SF Mono', Menlo, monospace; border: 1px solid var(--separator); }
-  .swatch.dark { color: #FFFFFF; }
-  .swatch .name { font-size: 12px; font-weight: 600; font-family: var(--font); margin-bottom: 2px; }
-  .swatch.gradient { background: var(--gradient-brand); color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
-
-  /* Type scale */
-  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--separator); }
-  .type-row:last-child { border-bottom: none; }
-  .type-meta { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--text-secondary); width: 180px; flex-shrink: 0; }
-  .type-sample { flex: 1; }
-  .t-logo { font-family: var(--logo-font); font-size: 28px; font-weight: 700; }
-  .t-title { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; }
-  .t-username-l { font-size: 20px; font-weight: 700; }
-  .t-username { font-size: 14px; font-weight: 600; }
-  .t-body { font-size: 14px; }
-  .t-meta { font-size: 12px; color: var(--text-secondary); }
-  .t-micro { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-
-  /* Buttons */
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font); font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 8px; border: none; cursor: pointer; letter-spacing: -0.1px; }
-  .btn-primary { background: var(--action-blue); color: #fff; }
-  .btn-primary:active { background: var(--action-blue-pressed); transform: scale(0.97); }
-  .btn-secondary { background: var(--input-fill); color: var(--text); }
-  .btn-destructive { background: transparent; color: var(--destructive); }
-  .btn-outline { background: transparent; color: var(--action-blue); border: 1px solid var(--action-blue); }
-
-  /* Icons showcase */
-  .icons-row { display: flex; gap: 24px; align-items: center; }
-  .icon-block { display: flex; flex-direction: column; gap: 6px; align-items: center; color: var(--text); }
-  .icon-block .lbl { font-size: 10px; color: var(--text-secondary); }
-  .icon-block .heart-liked { color: var(--destructive); fill: var(--destructive) !important; }
-
-  /* Spacing */
-  .space-row { display: flex; align-items: flex-end; gap: 12px; }
-  .space-block { background: var(--text); }
-  .space-block.s2 { width: 2px; height: 40px; }
-  .space-block.s4 { width: 4px; height: 40px; }
-  .space-block.s8 { width: 8px; height: 40px; }
-  .space-block.s12 { width: 12px; height: 40px; }
-  .space-block.s16 { width: 16px; height: 40px; }
-  .space-block.s24 { width: 24px; height: 40px; }
-  .space-block.s32 { width: 32px; height: 40px; }
-  .space-lbl { font-size: 10px; color: var(--text-secondary); text-align: center; font-family: 'SF Mono', Menlo, monospace; }
-  .space-col { display: flex; flex-direction: column; gap: 4px; align-items: center; }
-
-  /* Radius */
-  .radius-row { display: flex; gap: 16px; flex-wrap: wrap; }
-  .radius-box { width: 72px; height: 72px; background: var(--text); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'SF Mono', Menlo, monospace; font-size: 11px; }
-  .radius-0 { border-radius: 0; }
-  .radius-8 { border-radius: 8px; }
-  .radius-10 { border-radius: 10px; }
-  .radius-20 { border-radius: 20px; }
-  .radius-full { border-radius: 50%; }
-
-  /* Bubbles */
-  .bubble-row { display: flex; flex-direction: column; gap: 8px; }
-  .bubble-wrap { display: flex; }
-  .bubble { max-width: 70%; padding: 9px 14px; border-radius: var(--radius-bubble); font-size: 14px; }
-  .bubble.in { background: var(--input-fill); color: var(--text); }
-  .bubble.out { background: linear-gradient(135deg, #3797F0, #7644FF); color: #fff; margin-left: auto; }
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 24px;
+  }
+  a {
+    color: #0A84FF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover { text-decoration: underline; }
+  p { color: #6B7280; }
 </style>
 </head>
 <body>
-<div class="page">
-
-  <div class="page-header">
-    <div class="page-title">Instagram iOS — Design Tokens</div>
-    <div class="page-chip">Light</div>
-  </div>
-  <p class="page-subtitle">A visual catalog of the design tokens defined in <code>DESIGN.md</code> — rendered in an iPhone frame with the real feed, nav, and tab bar so you can see tokens in context.</p>
-
-  <div class="grid">
-
-    <div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="island"></div>
-          <div class="app-nav">
-            <div class="app-logo">Instagram</div>
-            <div class="app-nav-actions">
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
-            </div>
-          </div>
-          <div class="stories">
-            <div class="story"><div class="story-ring"><div class="story-ring-inner"><div class="story-photo"></div></div></div><div class="story-label">Your story</div></div>
-            <div class="story"><div class="story-ring"><div class="story-ring-inner"><div class="story-photo p2"></div></div></div><div class="story-label">maya_c</div></div>
-            <div class="story"><div class="story-ring"><div class="story-ring-inner"><div class="story-photo p3"></div></div></div><div class="story-label">jordanp</div></div>
-            <div class="story"><div class="story-ring read"><div class="story-ring-inner"><div class="story-photo p4"></div></div></div><div class="story-label">_alex</div></div>
-          </div>
-          <div class="post">
-            <div class="post-header">
-              <div class="post-avatar"></div>
-              <div class="post-username">maya_c</div>
-              <div class="icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/></svg></div>
-            </div>
-            <div class="post-image"></div>
-            <div class="action-bar">
-              <div class="icon heart-liked" style="color: var(--destructive);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
-              <div class="icon save"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
-            </div>
-            <div class="likes">1,247 likes</div>
-            <p class="caption"><b>maya_c</b> soft light kind of morning ☕</p>
-            <div class="caption-meta">2 hours ago</div>
-          </div>
-          <div class="tab-bar">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg></div>
-            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
-            <div class="icon tab-icon reels"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="3" y="4" width="18" height="16" rx="3"/></svg></div>
-            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg></div>
-            <div class="tab-avatar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="section">
-        <div class="section-title">Color Palette</div>
-        <div class="swatches">
-          <div class="swatch" style="background:#FFFFFF; color: var(--text);"><div class="name">Canvas</div>#FFFFFF</div>
-          <div class="swatch dark" style="background:#000000;"><div class="name">Ink / Dark Canvas</div>#000000</div>
-          <div class="swatch" style="background:#8E8E8E; color:#fff;"><div class="name">Secondary Gray</div>#8E8E8E</div>
-          <div class="swatch" style="background:#DBDBDB;"><div class="name">Separator</div>#DBDBDB</div>
-          <div class="swatch" style="background:#EFEFEF;"><div class="name">Input Fill</div>#EFEFEF</div>
-          <div class="swatch dark" style="background:#0095F6;"><div class="name">Action Blue</div>#0095F6</div>
-          <div class="swatch dark" style="background:#1877F2;"><div class="name">Pressed Blue</div>#1877F2</div>
-          <div class="swatch dark" style="background:#ED4956;"><div class="name">Destructive</div>#ED4956</div>
-          <div class="swatch dark" style="background:#00376B;"><div class="name">Link</div>#00376B</div>
-          <div class="swatch dark gradient"><div class="name">Brand Gradient</div>#833AB4 → #FCAF45</div>
-          <div class="swatch dark" style="background:#78DE45;"><div class="name">Online</div>#78DE45</div>
-          <div class="swatch dark" style="background:#2FB825;"><div class="name">Close Friends</div>#2FB825</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Typography — SF Pro + Logotype</div>
-        <div class="type-row"><div class="type-meta">Logotype · 28pt · 400</div><div class="type-sample"><span class="t-logo">Instagram</span></div></div>
-        <div class="type-row"><div class="type-meta">Username (Large) · 20pt · 700</div><div class="type-sample"><span class="t-username-l">maya_c</span></div></div>
-        <div class="type-row"><div class="type-meta">Screen Title · 16pt · 600</div><div class="type-sample"><span class="t-title">Messages</span></div></div>
-        <div class="type-row"><div class="type-meta">Username · 14pt · 600</div><div class="type-sample"><span class="t-username">maya_c</span></div></div>
-        <div class="type-row"><div class="type-meta">Caption / Body · 14pt · 400</div><div class="type-sample"><span class="t-body">Soft light kind of morning ☕</span></div></div>
-        <div class="type-row"><div class="type-meta">Meta · 12pt · 400</div><div class="type-sample"><span class="t-meta">View all 24 comments</span></div></div>
-        <div class="type-row"><div class="type-meta">Timestamp · 11pt · 400 UPPER</div><div class="type-sample"><span class="t-micro">2 hours ago</span></div></div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Buttons</div>
-        <div class="btn-row">
-          <button class="btn btn-primary">Follow</button>
-          <button class="btn btn-secondary">Following</button>
-          <button class="btn btn-secondary">Message</button>
-          <button class="btn btn-destructive">Report</button>
-          <button class="btn btn-outline">Sign Up</button>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Icons — 24pt Outlined / Filled</div>
-        <div class="icons-row">
-          <div class="icon-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg><span class="lbl">Home</span></div>
-          <div class="icon-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span class="lbl">Search</span></div>
-          <div class="icon-block heart-liked"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="lbl" style="color: var(--destructive);">Liked</span></div>
-          <div class="icon-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="lbl">Comment</span></div>
-          <div class="icon-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg><span class="lbl">Share</span></div>
-          <div class="icon-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span class="lbl">Save</span></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Spacing — 4pt Base</div>
-        <div class="space-row">
-          <div class="space-col"><div class="space-block s2"></div><div class="space-lbl">2</div></div>
-          <div class="space-col"><div class="space-block s4"></div><div class="space-lbl">4</div></div>
-          <div class="space-col"><div class="space-block s8"></div><div class="space-lbl">8</div></div>
-          <div class="space-col"><div class="space-block s12"></div><div class="space-lbl">12</div></div>
-          <div class="space-col"><div class="space-block s16"></div><div class="space-lbl">16</div></div>
-          <div class="space-col"><div class="space-block s24"></div><div class="space-lbl">24</div></div>
-          <div class="space-col"><div class="space-block s32"></div><div class="space-lbl">32</div></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Corner Radius</div>
-        <div class="radius-row">
-          <div class="radius-box radius-0">0</div>
-          <div class="radius-box radius-8">8</div>
-          <div class="radius-box radius-10">10</div>
-          <div class="radius-box radius-20">20</div>
-          <div class="radius-box radius-full">Full</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">DM Bubbles</div>
-        <div class="bubble-row">
-          <div class="bubble-wrap"><div class="bubble in">hey! you up?</div></div>
-          <div class="bubble-wrap"><div class="bubble out">always. what's up</div></div>
-          <div class="bubble-wrap"><div class="bubble in">sending you that photo from yesterday</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+  <h1>Preview moved</h1>
+  <p>Interactive previews now live on the Spectr gallery.</p>
+  <p><a href="https://www.spectr.to/gallery">Open www.spectr.to/gallery →</a></p>
 </div>
+<script>window.location.replace('https://www.spectr.to/gallery');</script>
 </body>
 </html>

@@ -3,358 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System Inspired by Uber iOS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Preview — Awesome iOS DESIGN.md</title>
+<meta http-equiv="refresh" content="0; url=https://www.spectr.to/gallery">
+<link rel="canonical" href="https://www.spectr.to/gallery">
 <style>
-  :root {
-    --black: #000000;
-    --white: #FFFFFF;
-    --gray-50:  #F6F6F6;
-    --gray-100: #EEEEEE;
-    --gray-200: #E5E5E5;
-    --gray-400: #AFAFAF;
-    --gray-600: #757575;
-    --gray-700: #545454;
-    --gray-900: #2F2F2F;
-    --green: #05A357;
-    --red: #D72113;
-    --blue: #0A47FF;
-    --amber: #FFCB00;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-    --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: var(--gray-50); color: var(--black); font-family: var(--font); font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
-  body { padding: 48px 24px 80px; }
-  .page { max-width: 1120px; margin: 0 auto; }
-
-  .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
-  .page-title { font-size: 28px; font-weight: 700; letter-spacing: -0.6px; }
-  .page-chip { background: var(--black); color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.6px; text-transform: uppercase; }
-  .page-subtitle { color: var(--gray-600); font-size: 15px; max-width: 640px; margin-bottom: 40px; line-height: 1.5; }
-
-  .grid { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-
-  /* Phone */
-  .phone { width: 320px; height: 680px; border-radius: 48px; background: #0a0a0a; padding: 12px; margin: 0 auto; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.4), 0 0 0 2px rgba(0,0,0,0.06) inset; position: sticky; top: 24px; }
-  .phone-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--white); position: relative; display: flex; flex-direction: column; }
-  .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #000; border-radius: 14px; z-index: 10; }
-
-  /* Map area — 60% of viewport */
-  .map {
-    position: absolute; inset: 0 0 280px 0;
-    background:
-      linear-gradient(180deg, rgba(217,229,242,0.5) 0%, rgba(217,229,242,0) 80%),
-      radial-gradient(ellipse at 30% 40%, #D9E5F2 0%, #D9E5F2 12%, #F2F2F2 12%, #F2F2F2 100%),
-      #F2F2F2;
-    overflow: hidden;
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 24px;
   }
-  .road { position: absolute; background: var(--white); }
-  .road.h1 { top: 28%; left: -10%; width: 120%; height: 10px; transform: rotate(-4deg); }
-  .road.h2 { top: 52%; left: -10%; width: 120%; height: 6px; transform: rotate(3deg); }
-  .road.v1 { top: -5%; left: 18%; width: 8px; height: 80%; transform: rotate(12deg); }
-  .road.v2 { top: -5%; left: 70%; width: 6px; height: 70%; transform: rotate(-8deg); }
-
-  /* Route polyline */
-  .route { position: absolute; top: 22%; left: 22%; width: 55%; height: 3px; background: var(--black); transform: rotate(18deg); transform-origin: left center; box-shadow: 0 0 0 1px rgba(255,255,255,0.9); border-radius: 2px; }
-
-  /* Pickup dot */
-  .pickup { position: absolute; top: 22%; left: 22%; width: 14px; height: 14px; border-radius: 50%; background: var(--black); border: 2px solid var(--white); transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
-
-  /* Destination pin */
-  .pin { position: absolute; top: 38%; right: 22%; width: 24px; height: 30px; }
-  .pin .body { width: 24px; height: 24px; background: var(--black); border-radius: 4px; position: relative; }
-  .pin .body::after { content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--black); }
-  .pin::before { content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 18px; height: 5px; background: rgba(0,0,0,0.2); border-radius: 50%; filter: blur(2px); }
-
-  /* Driver car + beacon */
-  .driver { position: absolute; top: 45%; left: 48%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; }
-  .beacon { position: absolute; width: 48px; height: 48px; border-radius: 50%; background: var(--green); opacity: 0; animation: pulse 1.8s ease-in-out infinite; }
-  .beacon.b2 { animation-delay: 0.6s; }
-  .beacon.b3 { animation-delay: 1.2s; }
-  @keyframes pulse { 0% { transform: scale(1); opacity: 0.35; } 100% { transform: scale(2.4); opacity: 0; } }
-  .driver .car { width: 24px; height: 24px; background: var(--white); border: 1px solid var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; }
-  .driver .car svg { width: 12px; height: 12px; fill: var(--black); }
-
-  /* ETA badge */
-  .eta-badge { position: absolute; top: 34%; left: 52%; background: var(--black); color: var(--white); font-family: var(--mono); font-weight: 500; font-size: 13px; padding: 4px 10px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-
-  /* Floating map controls */
-  .map-ctrl { position: absolute; right: 12px; width: 40px; height: 40px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-  .map-ctrl svg { width: 18px; height: 18px; stroke: var(--black); stroke-width: 2; fill: none; }
-  .map-ctrl.c1 { top: 60px; }
-  .map-ctrl.c2 { top: 108px; }
-
-  /* Bottom sheet */
-  .sheet { position: absolute; bottom: 60px; left: 0; right: 0; background: var(--white); border-radius: 16px 16px 0 0; padding: 8px 16px 16px; box-shadow: 0 -4px 24px rgba(0,0,0,0.08); z-index: 4; }
-  .grabber { width: 36px; height: 4px; background: var(--gray-200); border-radius: 2px; margin: 0 auto 12px; }
-  .sheet-title { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 12px; }
-
-  /* Where to input */
-  .whereto { background: var(--gray-50); border-radius: 8px; height: 48px; display: flex; align-items: center; padding: 0 12px; gap: 12px; margin-bottom: 10px; }
-  .whereto .dots { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-  .whereto .dot { width: 7px; height: 7px; background: var(--black); }
-  .whereto .line { width: 1px; height: 8px; background: var(--gray-400); }
-  .whereto .ph { flex: 1; font-size: 16px; font-weight: 500; letter-spacing: -0.1px; }
-  .whereto .later { background: var(--white); border: 1px solid var(--gray-200); border-radius: 500px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
-  .whereto .later svg { width: 10px; height: 10px; stroke: var(--black); stroke-width: 2; fill: none; }
-
-  /* Ride option cards */
-  .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
-  .opt { height: 56px; border: 1px solid var(--gray-200); border-radius: 8px; padding: 0 12px; display: flex; align-items: center; gap: 10px; background: var(--white); }
-  .opt.selected { border: 2px solid var(--black); background: var(--gray-50); padding: 0 11px; }
-  .opt .car-ill { width: 40px; height: 40px; background: var(--black); border-radius: 6px; position: relative; flex-shrink: 0; }
-  .opt .car-ill::after { content: ''; position: absolute; inset: 10px 6px; background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent); border-radius: 3px; }
-  .opt .info { flex: 1; min-width: 0; }
-  .opt .name-row { display: flex; align-items: center; gap: 6px; }
-  .opt .name { font-size: 14px; font-weight: 500; }
-  .opt .cap { font-size: 10px; color: var(--gray-600); font-family: var(--mono); }
-  .opt .eta-line { font-size: 11px; color: var(--gray-600); font-family: var(--mono); margin-top: 2px; }
-  .opt .price { font-family: var(--mono); font-weight: 500; font-size: 14px; }
-
-  /* Payment chip */
-  .payment { height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 4px; border-top: 1px solid var(--gray-100); margin-top: 4px; padding-top: 10px; }
-  .payment .card { width: 24px; height: 16px; background: var(--black); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 7px; font-weight: 700; letter-spacing: 0.5px; }
-  .payment .label { flex: 1; font-size: 13px; font-weight: 500; }
-  .payment .chev { color: var(--gray-600); font-size: 14px; }
-
-  /* CTA */
-  .cta { height: 48px; background: var(--black); color: var(--white); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; letter-spacing: -0.1px; margin-top: 8px; }
-
-  /* Tab bar */
-  .tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--white); border-top: 0.5px solid var(--gray-200); display: flex; align-items: center; justify-content: space-around; padding: 4px 8px 14px; z-index: 5; }
-  .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--gray-600); font-size: 9px; font-weight: 500; }
-  .tab.active { color: var(--black); }
-  .tab svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
-  .tab.active svg { fill: currentColor; stroke: currentColor; }
-
-  /* Token sections */
-  .section { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray-600); margin-bottom: 16px; }
-
-  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .swatch { border-radius: 8px; padding: 14px; min-height: 84px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 500; font-family: var(--mono); border: 1px solid var(--gray-200); color: var(--white); }
-  .swatch .name { font-size: 12px; font-weight: 600; font-family: var(--font); margin-bottom: 2px; }
-  .swatch.light { color: var(--black); }
-
-  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--gray-100); }
-  .type-row:last-child { border-bottom: none; }
-  .type-meta { font-family: var(--mono); font-size: 11px; color: var(--gray-600); width: 220px; flex-shrink: 0; }
-  .type-sample { flex: 1; }
-  .t-36 { font-size: 32px; font-weight: 700; letter-spacing: -0.6px; }
-  .t-24 { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
-  .t-18 { font-size: 17px; font-weight: 500; letter-spacing: -0.1px; }
-  .t-16 { font-size: 15px; font-weight: 500; }
-  .t-14 { font-size: 14px; font-weight: 400; color: var(--gray-600); }
-  .t-mono { font-family: var(--mono); font-weight: 500; font-size: 15px; }
-  .t-11 { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--gray-600); }
-
-  /* Buttons demo */
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .btn { font-family: var(--font); font-size: 15px; font-weight: 500; padding: 14px 24px; border-radius: 8px; border: none; cursor: pointer; }
-  .btn-primary { background: var(--black); color: var(--white); }
-  .btn-outline { background: transparent; color: var(--black); border: 1px solid var(--black); padding: 13px 23px; }
-  .btn-destructive { background: transparent; color: var(--red); padding: 13px 23px; font-weight: 500; }
-  .chip { padding: 8px 12px; background: var(--gray-50); color: var(--black); font-size: 13px; font-weight: 500; border-radius: 500px; display: inline-flex; align-items: center; gap: 6px; }
-  .chip svg { width: 12px; height: 12px; fill: var(--black); }
-
-  /* Active trip card demo */
-  .trip-card { padding: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; }
-  .trip-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .trip-photo { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #B88B5F, #6E4A2E); }
-  .trip-name { font-size: 15px; font-weight: 500; }
-  .trip-rating { font-size: 12px; color: var(--gray-600); font-family: var(--mono); display: flex; align-items: center; gap: 3px; }
-  .trip-rating svg { width: 10px; height: 10px; fill: var(--gray-600); }
-  .trip-plate { font-family: var(--mono); font-weight: 500; font-size: 13px; background: var(--gray-50); padding: 4px 10px; border-radius: 500px; margin-left: auto; }
-  .trip-car { font-size: 13px; color: var(--gray-700); margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
-  .trip-actions { display: flex; gap: 24px; }
-  .act-btn { text-align: center; }
-  .act-btn .icon { width: 40px; height: 40px; border-radius: 50%; background: var(--gray-50); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
-  .act-btn svg { width: 18px; height: 18px; fill: var(--black); }
-  .act-btn .label { font-size: 11px; color: var(--gray-600); }
-
-  /* Radius scale */
-  .radius-row { display: flex; gap: 16px; flex-wrap: wrap; }
-  .radius-box { width: 72px; height: 72px; background: var(--black); color: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; }
-  .r-0 { border-radius: 0; }
-  .r-4 { border-radius: 4px; }
-  .r-8 { border-radius: 8px; }
-  .r-12 { border-radius: 12px; }
-  .r-16 { border-radius: 16px 16px 0 0; }
-  .r-full { border-radius: 500px; }
-  .r-circle { border-radius: 50%; }
+  a {
+    color: #0A84FF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover { text-decoration: underline; }
+  p { color: #6B7280; }
 </style>
 </head>
 <body>
-<div class="page">
-
-  <div class="page-header">
-    <div class="page-title">Uber iOS — Design Tokens</div>
-    <div class="page-chip">Light</div>
-  </div>
-  <p class="page-subtitle">Map as hero. Black CTA, monochrome chrome. Uber Move family with Mono numerals. Functional-only color: green is "your driver", red is "surge/cancel".</p>
-
-  <div class="grid">
-
-    <div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="island"></div>
-
-          <div class="map">
-            <div class="road h1"></div>
-            <div class="road h2"></div>
-            <div class="road v1"></div>
-            <div class="road v2"></div>
-            <div class="route"></div>
-            <div class="pickup"></div>
-            <div class="pin"><div class="body"></div></div>
-            <div class="driver">
-              <div class="beacon"></div>
-              <div class="beacon b2"></div>
-              <div class="beacon b3"></div>
-              <div class="car"><svg viewBox="0 0 24 24"><path d="M5 11l1.5-4h11L19 11v6h-2v-2H7v2H5v-6zm2 3h10v-1H7v1z"/></svg></div>
-            </div>
-            <div class="eta-badge">2 min</div>
-            <div class="map-ctrl c1"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
-            <div class="map-ctrl c2"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-          </div>
-
-          <div class="sheet">
-            <div class="grabber"></div>
-            <div class="sheet-title">Choose a ride</div>
-            <div class="whereto">
-              <div class="dots"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
-              <div class="ph">Where to?</div>
-              <div class="later"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 15,14"/></svg>Later</div>
-            </div>
-            <div class="options">
-              <div class="opt selected">
-                <div class="car-ill"></div>
-                <div class="info">
-                  <div class="name-row"><div class="name">UberX</div><div class="cap">· 4</div></div>
-                  <div class="eta-line">3 min away · 8:42 PM</div>
-                </div>
-                <div class="price">$14.82</div>
-              </div>
-              <div class="opt">
-                <div class="car-ill" style="background: var(--gray-700);"></div>
-                <div class="info">
-                  <div class="name-row"><div class="name">Comfort</div><div class="cap">· 4</div></div>
-                  <div class="eta-line">5 min away · 8:44 PM</div>
-                </div>
-                <div class="price">$19.14</div>
-              </div>
-            </div>
-            <div class="payment">
-              <div class="card">VISA</div>
-              <div class="label">Personal · Visa ·· 4242</div>
-              <div class="chev">›</div>
-            </div>
-            <div class="cta">Confirm UberX</div>
-          </div>
-
-          <div class="tab-bar">
-            <div class="tab active"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span>Services</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 15,14"/></svg><span>Activity</span></div>
-            <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span>Account</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="section">
-        <div class="section-title">Color Palette — Brand & Functional</div>
-        <div class="swatches">
-          <div class="swatch" style="background:#000000;"><div class="name">Black</div>#000000</div>
-          <div class="swatch light" style="background:#FFFFFF;"><div class="name">White</div>#FFFFFF</div>
-          <div class="swatch light" style="background:#F6F6F6;"><div class="name">Gray 50</div>#F6F6F6</div>
-          <div class="swatch light" style="background:#E5E5E5;"><div class="name">Gray 200</div>#E5E5E5</div>
-          <div class="swatch light" style="background:#AFAFAF;"><div class="name">Gray 400</div>#AFAFAF</div>
-          <div class="swatch" style="background:#757575;"><div class="name">Gray 600</div>#757575</div>
-          <div class="swatch" style="background:#545454;"><div class="name">Gray 700</div>#545454</div>
-          <div class="swatch" style="background:#2F2F2F;"><div class="name">Gray 900</div>#2F2F2F</div>
-          <div class="swatch" style="background:#05A357;"><div class="name">Green (active)</div>#05A357</div>
-          <div class="swatch" style="background:#D72113;"><div class="name">Red (surge)</div>#D72113</div>
-          <div class="swatch" style="background:#0A47FF;"><div class="name">Blue (info)</div>#0A47FF</div>
-          <div class="swatch light" style="background:#FFCB00;"><div class="name">Amber (surge+)</div>#FFCB00</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Typography — Uber Move Family</div>
-        <div class="type-row"><div class="type-meta">Display · 32pt · 700</div><div class="type-sample t-36">Get a ride</div></div>
-        <div class="type-row"><div class="type-meta">Sheet Title · 22pt · 700</div><div class="type-sample t-24">Choose a ride</div></div>
-        <div class="type-row"><div class="type-meta">Where To · 18pt · 500</div><div class="type-sample t-18">Where to?</div></div>
-        <div class="type-row"><div class="type-meta">Row Title · 16pt · 500</div><div class="type-sample t-16">UberX</div></div>
-        <div class="type-row"><div class="type-meta">Meta · 14pt · 400</div><div class="type-sample t-14">3 min away</div></div>
-        <div class="type-row"><div class="type-meta">Price · Mono 16pt · 500</div><div class="type-sample t-mono">$14.82</div></div>
-        <div class="type-row"><div class="type-meta">Address · Mono 13pt · 400</div><div class="type-sample t-mono" style="font-size:13px; font-weight:400;">212 Market St, SF</div></div>
-        <div class="type-row"><div class="type-meta">Label · 11pt · 700 UP</div><div class="type-sample t-11">Suggested</div></div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Buttons</div>
-        <div class="btn-row">
-          <button class="btn btn-primary">Confirm UberX</button>
-          <button class="btn btn-outline">Add Stop</button>
-          <button class="btn btn-destructive">Cancel Ride</button>
-        </div>
-        <div class="btn-row" style="margin-top: 16px;">
-          <div class="chip"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg>Home</div>
-          <div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Work</div>
-          <div class="chip"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>Saved</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Active Trip Card</div>
-        <div class="trip-card">
-          <div class="trip-row">
-            <div class="trip-photo"></div>
-            <div>
-              <div class="trip-name">Marcus T.</div>
-              <div class="trip-rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>4.98</div>
-            </div>
-            <div class="trip-plate">7ABC123</div>
-          </div>
-          <div class="trip-car">Black Toyota Camry</div>
-          <div class="trip-actions">
-            <div class="act-btn">
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg></div>
-              <div class="label">Message</div>
-            </div>
-            <div class="act-btn">
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></div>
-              <div class="label">Call</div>
-            </div>
-            <div class="act-btn">
-              <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 4v12m-6-6l6-6 6 6M4 20h16"/></svg></div>
-              <div class="label">Share</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">Corner Radius Scale</div>
-        <div class="radius-row">
-          <div class="radius-box r-0">0</div>
-          <div class="radius-box r-4">4</div>
-          <div class="radius-box r-8">8</div>
-          <div class="radius-box r-12">12</div>
-          <div class="radius-box r-16">16 top</div>
-          <div class="radius-box r-full">Pill</div>
-          <div class="radius-box r-circle">Circle</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+  <h1>Preview moved</h1>
+  <p>Interactive previews now live on the Spectr gallery.</p>
+  <p><a href="https://www.spectr.to/gallery">Open www.spectr.to/gallery →</a></p>
 </div>
+<script>window.location.replace('https://www.spectr.to/gallery');</script>
 </body>
 </html>
