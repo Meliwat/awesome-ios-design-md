@@ -48,7 +48,7 @@ Typography is Proxima Nova — a humanist geometric sans that TikTok has used ac
 - **Error Red** (`#FE2C55`): Same token as rose.
 
 ### Dark-Only
-TikTok has no official light mode. Every screen — feed, profile, inbox, search, settings — is dark. The only "light" surfaces are the composer sheet when selecting effects (a white-background picker) and the camera viewfinder (the camera's own image). `preview.html` and `preview-dark.html` are therefore the same file.
+TikTok has no official light mode. Every screen — feed, profile, inbox, search, settings — is dark. The only "light" surfaces are the composer sheet when selecting effects (a white-background picker) and the camera viewfinder (the camera's own image).
 
 ## 3. Typography Rules
 

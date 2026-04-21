@@ -9,8 +9,7 @@ Design system docs inspired by the [Duolingo iOS app](https://apps.apple.com/us/
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, `ViewModifier`s, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, StyleSheet, Reanimated + Haptics, `expo-router` Tabs |
-| `preview.html` | Interactive design token catalog (light) |
-| `preview-dark.html` | Interactive design token catalog (dark, blue-tinted navy) |
+| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves
 

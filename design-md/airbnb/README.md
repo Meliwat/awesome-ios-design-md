@@ -9,8 +9,7 @@ Design system docs inspired by the [Airbnb iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, components, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated |
-| `preview.html` | Interactive design token catalog (light mode) |
-| `preview-dark.html` | Interactive design token catalog (warm dark) |
+| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves
 

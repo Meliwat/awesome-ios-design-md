@@ -7,8 +7,7 @@
 | File | Description |
 |------|-------------|
 | `DESIGN.md` | Complete design system documentation (9 sections) |
-| `preview.html` | Interactive design token catalog (light mode) |
-| `preview-dark.html` | Interactive design token catalog (dark mode) |
+| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 Use [DESIGN.md](DESIGN.md) as a reference for AI agents (Claude, Cursor, Codex, Stitch) to generate SwiftUI or UIKit UI that matches the Instagram iOS design language.
 
@@ -23,4 +22,4 @@ Use [DESIGN.md](DESIGN.md) as a reference for AI agents (Claude, Cursor, Codex, 
 
 ## Preview
 
-Open `preview.html` or `preview-dark.html` in a browser to see the design tokens rendered in an iPhone frame.
+See the interactive token catalog at [www.spectr.to/gallery](https://www.spectr.to/gallery).

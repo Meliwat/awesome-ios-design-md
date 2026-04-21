@@ -9,8 +9,7 @@
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, `ViewModifier`s, sample views |
 | `DESIGN-expo.md` | Expo / React Native — design tokens, StyleSheet, Reanimated + Haptics |
-| `preview.html` | Interactive design token catalog (light mode, secondary) |
-| `preview-dark.html` | Interactive design token catalog (dark mode, primary) |
+| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves
 

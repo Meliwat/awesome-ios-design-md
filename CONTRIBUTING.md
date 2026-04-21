@@ -18,8 +18,7 @@ If you notice issues with an existing file:
 2. Open the app's `DESIGN.md`
 3. Compare against the live iOS app (latest build)
 4. Fix incorrect hex values, missing tokens, stale component specs, or weak descriptions
-5. Update `preview.html` and `preview-dark.html` if your changes affect displayed tokens
-6. Open a PR with before/after rationale (screenshots help)
+5. Open a PR with before/after rationale (screenshots help)
 
 ### Quality Bar
 
