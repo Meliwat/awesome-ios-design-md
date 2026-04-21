@@ -8,7 +8,7 @@
 <div align="center">
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![DESIGN.md Count](https://img.shields.io/badge/apps-8-10b981?style=classic)
+![DESIGN.md Count](https://img.shields.io/badge/apps-30-10b981?style=classic)
 ![Platform](https://img.shields.io/badge/platform-iOS-000000?style=classic&logo=apple)
 ![Frameworks](https://img.shields.io/badge/frameworks-SwiftUI%20%2B%20Expo-informational?style=classic)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=classic)
@@ -78,26 +78,63 @@ Each app folder includes:
 
 ## Collection
 
-### Social & Media
+### Social & Community
 
 - [**Instagram**](design-md/instagram/) — Photo & video social. Monochrome chrome, 10-stop brand gradient reserved for Stories + Create, icon-only tab bar, true-black OLED dark mode
 - [**TikTok**](design-md/tiktok/) — Short-form video. Full-bleed vertical FYP, chromatic-aberration logo (cyan + red), right-side action rail, signature glitch aesthetic
+- [**X (Twitter)**](design-md/x-twitter/) — Real-time text-first social. Pure black OLED canvas, X Blue `#1D9BF0` reserved for links, Chirp font, column-centered feed, per-action color micro-animations
+- [**Threads**](design-md/threads/) — Text-forward Meta social. Pure black canvas, Instagram-coral like heart, thread-line indentation, no hashtags/trending, Instagram Sans
+- [**Facebook**](design-md/facebook/) — Social network. Facebook Blue `#1877F2`, `#F0F2F5` feed background, 7-emoji Reactions popover with drag-select, profile cover hero
+- [**Snapchat**](design-md/snapchat/) — Camera-first social. Snap Yellow `#FFFC00`, 5-screen swipe nav, 82pt yellow capture button, color-coded snap types, Avenir Next
+- [**Reddit**](design-md/reddit/) — Communities & discussion. Reddit Orange-Red `#FF4500`, upvote-orange `#FF8717` / downvote `#7193FF` vote column, flat post cards, 10pt-per-level comment indentation
+- [**Pinterest**](design-md/pinterest/) — Visual discovery. Pinterest Red `#E60023`, masonry 2-column grid with variable heights, floating Save-button morph, Pinterest Sans
+- [**LinkedIn**](design-md/linkedin/) — Professional network. Cream canvas `#F3F2EF`, LinkedIn Blue `#0A66C2`, 6-reaction picker, Premium gold avatar frame, Open-to-Work green ring
+
+### Messaging
+
+- [**WhatsApp**](design-md/whatsapp/) — Encrypted chat. WhatsApp Green `#25D366`, mint-leaf outgoing bubbles `#D9FDD3`, voice-message waveform, blue double-check read receipts
+- [**Telegram**](design-md/telegram/) — Fast, themeable chat. Telegram Blue `#0088CC`, 17pt bubbles with 6pt notch tails, silent-send long-press, Lottie animated emoji, floating voice mini-player
+- [**Discord**](design-md/discord/) — Community chat. Blurple `#5865F2`, three-gray surface system `#1E1F22`/`#2B2D31`/`#313338`, server rail with squircle-morph on active, role-colored usernames, gg sans
+- [**Slack**](design-md/slack/) — Work chat. Aubergine `#4A154B` sidebar (workspace-customizable), rounded-square avatars, Huddles banner, reaction pill chips, Slack Lato
 
 ### Music & Audio
 
 - [**Spotify**](design-md/spotify/) — Music streaming. Dark `#121212` canvas, Spotify Green `#1DB954` as the single accent, album-art-driven Now Playing gradient via dynamic color extraction
+- [**Apple Music**](design-md/apple-music/) — Music + lyrics. Apple Music Red `#FA2D48`, SF Pro native, time-synced word-by-word lyrics, Dolby Atmos badge, `.regularMaterial` tab bar
+
+### Video & Streaming
+
+- [**YouTube**](design-md/youtube/) — Video platform. YouTube Red `#FF0000`, 16:9 thumbnails with duration tag, Subscribe morph, mini-player drag-down, Shorts rail, YouTube Sans + Roboto
+- [**Netflix**](design-md/netflix/) — Streaming. Netflix Red `#E50914` on `#141414` canvas, hero trailer auto-play, Top 10 numeral row, Continue Watching progress bar, Netflix Sans
 
 ### Food & Delivery
 
 - [**DoorDash**](design-md/doordash/) — On-demand delivery. DoorDash Red `#EB1700` for every checkout, photo-first 16:10 merchant cards, floating pill CTA, TT Norms Pro bold hierarchy
+- [**Starbucks**](design-md/starbucks/) — Coffee + rewards. Starbucks Green `#00704A`, gold Stars progress ring, Short/Tall/Grande/Venti/Trenta size selector, QR pay, SoDo Sans
 
-### Travel & Marketplace
+### Travel & Mobility
 
 - [**Airbnb**](design-md/airbnb/) — Stays + Experiences. Rausch / `#FF385C` coral, Airbnb Cereal font, photography-first stay cards, category chip rail, subtle card shadows
-
-### Mobility
-
 - [**Uber**](design-md/uber/) — Ride-hailing + delivery. Stark monochrome (black/white), Uber Move font, map-as-hero layout, Base design system tokens
+- [**Google Maps**](design-md/google-maps/) — Navigation. Google Blue `#4285F4` route polyline, map-as-hero with floating bottom sheet drawer, color-coded pins, turn-by-turn immersive mode
+
+### Shopping & Finance
+
+- [**Amazon**](design-md/amazon/) — E-commerce. Amazon Yellow `#FF9900` Add-to-Cart, Deep Navy `#131921` top nav, PDP price block with superscript cents, Prime badge, Amazon Ember
+- [**Venmo**](design-md/venmo/) — Social payments. Venmo Blue `#008CFF`, public emoji-laden transaction feed, Pay/Request split pill, animated sent-checkmark
+
+### Productivity
+
+- [**Gmail**](design-md/gmail/) — Email. Google multicolor logo, Gmail Red `#D93025` Compose FAB (16pt squircle), Material You active-indicator pill, swipe archive/delete, Google Sans + Roboto
+- [**Notion**](design-md/notion/) — Block-based workspace. Pure white / `#191919` dark, block editor with `/` command palette, 9 muted pastel page backgrounds, user-switchable Inter / Lora / IBM Plex Mono
+
+### Dating
+
+- [**Tinder**](design-md/tinder/) — Dating swipe cards. Tinder Gradient `#FD267A → #FF6036`, rotated LIKE/NOPE stamps on swipe, 5-button action bar (Rewind / Nope / Super Like / Like / Boost), match-screen pink takeover
+
+### AI
+
+- [**ChatGPT**](design-md/chatgpt/) — AI chat. Monochromatic canvas, 32pt black/white circular send button, user-bubble vs inline-assistant asymmetry, full-screen pulsing blue voice-mode sphere, Söhne
 
 ### Health & Utility
 
