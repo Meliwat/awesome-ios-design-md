@@ -8,7 +8,7 @@
 <div align="center">
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![DESIGN.md Count](https://img.shields.io/badge/apps-30-10b981?style=classic)
+![DESIGN.md Count](https://img.shields.io/badge/apps-50-10b981?style=classic)
 ![Platform](https://img.shields.io/badge/platform-iOS-000000?style=classic&logo=apple)
 ![Frameworks](https://img.shields.io/badge/frameworks-SwiftUI%20%2B%20Expo-informational?style=classic)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=classic)
@@ -117,29 +117,49 @@ Each app folder includes:
 - [**Airbnb**](design-md/airbnb/) — Stays + Experiences. Rausch / `#FF385C` coral, Airbnb Cereal font, photography-first stay cards, category chip rail, subtle card shadows
 - [**Uber**](design-md/uber/) — Ride-hailing + delivery. Stark monochrome (black/white), Uber Move font, map-as-hero layout, Base design system tokens
 - [**Google Maps**](design-md/google-maps/) — Navigation. Google Blue `#4285F4` route polyline, map-as-hero with floating bottom sheet drawer, color-coded pins, turn-by-turn immersive mode
+- [**Apple Maps**](design-md/apple-maps/) — Apple's native navigation. Cream parchment cartography `#F6F1E6` land + `#B9D9EB` water, Maps Blue `#0A84FF` directions polyline, pulsing current-location puck, `.regularMaterial` blur on the sliding search card (88/50/full detents), SF Pro tabular figures
+- [**Waze**](design-md/waze/) — Community navigation. Waze Purple `#7E55BE` + Cyan `#33CCFF` electric duo, speech-bubble hazard reports with triangular tails, cyan arrow puck (not a dot), bright cyan water + mint parks, Boing typography with SF Pro Rounded fallback
 
 ### Shopping & Finance
 
 - [**Amazon**](design-md/amazon/) — E-commerce. Amazon Yellow `#FF9900` Add-to-Cart, Deep Navy `#131921` top nav, PDP price block with superscript cents, Prime badge, Amazon Ember
 - [**Venmo**](design-md/venmo/) — Social payments. Venmo Blue `#008CFF`, public emoji-laden transaction feed, Pay/Request split pill, animated sent-checkmark
+- [**Cash App**](design-md/cash-app/) — Mobile money. Pure-black canvas + single Cash Green `#00D632` accent, Cash Sans / Cash Sans Mono, 96pt $-amount keypad, icon-only tab bar, matte black Cash Card
+- [**PayPal**](design-md/paypal/) — Online payments. Dual-blue P-P wordmark (Sky `#0070BA` + Blue `#003087`), PayPal Sans Big/Small, balance card anchor, soft-pill CTAs, circular activity icons color-coded by transaction type
+- [**Robinhood**](design-md/robinhood/) — Investing. White canvas + true black text, Capsule Sans tabular-nums, portfolio chart in `#00C805` up / `#FF5000` down with draggable scrubber, black Trade CTA (green/orange reserved for Buy/Sell)
+- [**Coinbase**](design-md/coinbase/) — Crypto exchange. Coinbase Blue `#0052FF` + geometric C-mark, Coinbase Sans/Display/Mono (Frere-Jones, 2021), brand-color asset icons (BTC orange, ETH purple), mini sparklines, 4-up Buy/Sell/Send/Receive quad
+- [**Apple Wallet**](design-md/apple-wallet/) — Cards + passes. True-black canvas, 80pt-peek vertical card stack with 10pt-radius envelopes, Apple Card titanium gradient `#E8E8EB → #3D3D3F`, SF Pro Display/Text, no tab bar — the stack is the whole app
 
 ### Productivity
 
 - [**Gmail**](design-md/gmail/) — Email. Google multicolor logo, Gmail Red `#D93025` Compose FAB (16pt squircle), Material You active-indicator pill, swipe archive/delete, Google Sans + Roboto
 - [**Notion**](design-md/notion/) — Block-based workspace. Pure white / `#191919` dark, block editor with `/` command palette, 9 muted pastel page backgrounds, user-switchable Inter / Lora / IBM Plex Mono
+- [**Figma**](design-md/figma/) — Design + collaboration. Five iconic brand cubes (`#F24E1E` `#FF7262` `#A259FF` `#1ABCFE` `#0ACF83`) for avatars/thumbnails/cursors, Action Blue `#0D99FF` for the real CTA, Inter at 11–16pt density, `#1E1E1E` dark canvas matching the Editor
+- [**Apple Notes**](design-md/apple-notes/) — The calmest note-taker. Warm Notes Cream canvas `#FFFBED`, Notes Orange `#F09A38` FAB + folder stroke, yellow folder glyph `#F5D773`, SF Pro 34pt Heavy nav, 17pt 400 body with 1.5 line-height, no tab bar
+- [**Todoist**](design-md/todoist/) — Tasks + projects. Todoist Red `#DC4C3E` for FAB + P1 flag + brand, tinted-red FAB shadow, four-tier priority via checkbox stroke (P1 red, P2 `#EB8909`, P3 `#246FE0`, P4 gray), 52pt edge-to-edge task rows, SF Pro system font
+- [**Google Calendar**](design-md/google-calendar/) — Scheduling. Material on iOS: Google Blue `#1A73E8` FAB at Material Level 6, Material primaries (Blue/Red/Yellow/Green) + 24-color user palette, Google Sans Display + SF Pro Text hybrid, 36pt Schedule banners with today as filled blue circle
 
 ### Dating
 
 - [**Tinder**](design-md/tinder/) — Dating swipe cards. Tinder Gradient `#FD267A → #FF6036`, rotated LIKE/NOPE stamps on swipe, 5-button action bar (Rewind / Nope / Super Like / Like / Boost), match-screen pink takeover
+- [**Hinge**](design-md/hinge/) — Relationship-intent dating. Cream paper + warm Hinge Black + sacred Rose Gold accent for Standouts/Roses, vertical-scroll profiles with prompt cards in Sailec 24pt Bold, 44pt heart-tap on every reactive surface
+- [**Bumble**](design-md/bumble/) — Women-first dating. Bumble Yellow `#FFC629` + pure-black-on-yellow text, hexagon iconography for matches and mode toggles, big confident Brando 500/700/900, 24-hour countdown chip mechanic
 
 ### AI
 
 - [**ChatGPT**](design-md/chatgpt/) — AI chat. Monochromatic canvas, 32pt black/white circular send button, user-bubble vs inline-assistant asymmetry, full-screen pulsing blue voice-mode sphere, Söhne
+- [**Claude**](design-md/claude/) — AI assistant by Anthropic. Warm cream paper canvas + Claude Orange terracotta + Tiempos serif assistant body (the brand's central typographic decision) / Styrene sans for user and chrome, asterisk-star logomark on every message, streaming orange cursor
+- [**Perplexity**](design-md/perplexity/) — Answer engine with citations. Dark canvas `#0A0A0A` + Perplexity Teal `#20B8CD` accent, brand-defining inline citation chips `[1][2][3]` paired with a horizontal source-card row above every answer, FK Grotesk + Inter encyclopedic register
 
 ### Health & Utility
 
 - [**Cal AI**](design-md/cal-ai/) — AI calorie tracking. Near-black `#0A0A0A` canvas, white-on-black CTAs, macro trio accents (blue/amber/pink), capture FAB with subtle glow
 - [**Duolingo**](design-md/duolingo/) — Language learning. Feather Green `#58CC02`, Feather Bold font, mascot-driven gamification, streak + gems + hearts currency
+- [**Strava**](design-md/strava/) — Activity tracking + social. Strava Orange `#FC4C02` as the single accent, 4pt route polyline with halo, 3-up DISTANCE/TIME/PACE grid, tabular numerals everywhere, center Record button protruding 8pt with orange glow, coal-black dark mode `#0F0F0F`
+- [**Nike Run Club**](design-md/nike-run-club/) — Run coaching. True-black canvas + Volt `#CCFF00` accent on the 280pt progress ring, 88pt Trade Gothic Heavy Condensed elapsed time, hexagonal achievement medals, white-pill primary CTA, heavy haptics on START RUN
+- [**Headspace**](design-md/headspace/) — Meditation + sleep. Butter-cream canvas `#FFF7E7`, Marigold `#FF6B35` primary + Aurora gradient (peach → butter → marigold) wash, 234pt breathing meditation sphere on a 12s 4-2-4-2 ease-in-out cycle, Apercu/Nunito title case with 1.5 line-height
+- [**MyFitnessPal**](design-md/myfitnesspal/) — Calorie + macro tracking. White canvas + MFP Blue `#005DAA` heritage + Lake Blue `#0072CE` action, 220pt calorie ring that color-flips green → blue → amber → red, locked macro trio (Carbs `#FF9F1C` / Fat `#A463F2` / Protein `#19C37D`)
+- [**WHOOP**](design-md/whoop/) — Recovery + strain coaching. Pitch-black canvas `#0A0A0A`, neon Strain Green `#00FF7B`, Recovery ring that interpolates red → yellow → green by score, DIN 2014 ALL CAPS typography, tabular numerals everywhere, neon glows replace shadows
 
 ## Request an App
 
