@@ -1,32 +1,48 @@
 # Contributing to Awesome iOS DESIGN.md
 
-Thanks for contributing.
+Thanks for being here. This repo is a curated collection of **DESIGN.md** packs — complete, reverse-engineered design systems for real apps, written so any AI coding agent can generate pixel-matched UI. Every contribution that makes a pack sharper or adds a great app is welcome.
 
-This repository is a curated collection of DESIGN.md files extracted from popular iOS apps. Each file captures an app's complete visual language — tokens, typography, components, HIG patterns — in a format any AI coding agent can read.
+## Ways to contribute
 
-## How to Contribute
+### Request a new app
 
-### Request a New App
+[**Open an app request →**](https://github.com/Meliwat/awesome-ios-design-md/issues/new?template=request-an-app.yml)
 
-To request a DESIGN.md for an iOS app, [open an issue](https://github.com/Meliwat/awesome-ios-design-md/issues/new) with the App Store link and a few reference screenshots.
+Include the app name, an App Store / Play Store / website link, and a few high-quality screenshots (light **and** dark mode if it has both). The more reference material, the faster and more accurate the pack.
 
-### Improve an Existing DESIGN.md
+### Report a wrong token
 
-If you notice issues with an existing file:
+[**Report a token fix →**](https://github.com/Meliwat/awesome-ios-design-md/issues/new?template=token-fix.yml)
 
-1. **Open an issue first** to describe what you'd like to change and get feedback
-2. Open the app's `DESIGN.md`
-3. Compare against the live iOS app (latest build)
-4. Fix incorrect hex values, missing tokens, stale component specs, or weak descriptions
-5. Open a PR with before/after rationale (screenshots help)
+Tell us the app, the file, the value that's off, what it should be, and where you observed it (a screenshot of the live build is ideal). Small fixes are the most valuable contributions here — design systems drift as apps ship updates.
 
-### Quality Bar
+### Improve an existing pack
 
-- Values should be drawn from actual iOS builds, not marketing screenshots
-- Prefer system tokens (SF Pro, `UIColor.systemXxx`, SF Symbols) when the app uses them
-- Document both light and dark appearances — every iOS app ships both
-- Include HIG-correct specs: 44pt minimum touch targets, Dynamic Type support, safe-area handling
+1. Open an issue first if the change is non-trivial, so we can align before you invest time.
+2. Open the app's `DESIGN.md` and compare against the **latest live build**.
+3. Fix incorrect hex values, missing component states, stale specs, or weak descriptions.
+4. Keep the framework companions in sync — a token change in `DESIGN.md` should land in `DESIGN-swiftui.md`, `DESIGN-expo.md`, and `DESIGN-android.md` too.
+5. Open a PR with before/after rationale (screenshots help a lot).
+
+## What each pack contains
+
+| File | Purpose |
+|------|---------|
+| `DESIGN.md` | Framework-neutral design system (the 9-section spec) |
+| `DESIGN-swiftui.md` | SwiftUI implementation — `Color`/`Font` extensions, components, haptics |
+| `DESIGN-expo.md` | Expo / React Native — tokens, themed components, Reanimated |
+| `DESIGN-android.md` | Jetpack Compose (Material 3, Kotlin) implementation |
+| `README.md` | Pack overview, signature moves, brand sources |
+| `preview.md` | Link to the interactive preview on the Spectr gallery |
+
+## Quality bar
+
+- **Real builds, not marketing.** Values come from the live app, not press shots or store screenshots.
+- **Light and dark.** Document both appearances — virtually every app ships both.
+- **Platform-correct.** Honor HIG/Material: 44pt minimum touch targets, Dynamic Type / `sp` scaling, safe areas, real motion curves and haptics.
+- **Exact, not approximate.** Hex codes, point/dp values, weights, line heights, letter spacing — specifics are the entire point of a DESIGN.md.
+- **One identity per pack.** Each app keeps its own palette and voice. Never copy another app's tokens.
 
 ## License
 
-By contributing, you agree your contributions are provided under the repository license terms (MIT).
+By contributing, you agree your contributions are provided under the repository's [MIT License](LICENSE).
