@@ -34,15 +34,16 @@ Copy a DESIGN.md (or one of the framework-specific companions) into your Xcode o
 
 **This repo provides ready-to-use DESIGN.md files for iOS apps** — colors, SF Pro type ramps, component specs, SF Symbol usage, Dynamic Type behavior, HIG-correct layouts, haptics and motion.
 
-## Three flavors per app
+## Four flavors per app
 
-Each app ships three docs so you can pick the one that matches your stack:
+Each app ships four docs so you can pick the one that matches your stack:
 
 | File | For |
 |------|-----|
 | `DESIGN.md` | Framework-neutral — any agent, any framework (Flutter, SwiftUI, UIKit, React Native, Kotlin Compose) |
 | `DESIGN-swiftui.md` | SwiftUI-specific — `Color` / `Font` extensions, `ViewModifier`s, sample views, SF Symbols, `.sensoryFeedback` haptics |
 | `DESIGN-expo.md` | Expo / React Native — design token module, StyleSheet, Reanimated + `expo-haptics`, `expo-router`, `@expo/vector-icons` |
+| `DESIGN-android.md` | Jetpack Compose — `Color` token object, Material 3 `Typography`, `@Composable`s, `NavigationBar`, AndroidX Palette, `LocalHapticFeedback` |
 
 ## What's Inside Each DESIGN.md
 
@@ -67,6 +68,7 @@ Each app folder includes:
 | `DESIGN.md` | Framework-neutral design system (what agents read) |
 | `DESIGN-swiftui.md` | SwiftUI implementation code |
 | `DESIGN-expo.md` | Expo / React Native implementation code |
+| `DESIGN-android.md` | Jetpack Compose (Material 3, Kotlin) implementation code |
 | `README.md` | Pack overview, signature moves, brand sources |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 

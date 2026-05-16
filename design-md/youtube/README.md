@@ -9,6 +9,7 @@ Design system docs inspired by the [YouTube iOS app](https://apps.apple.com/us/a
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, Subscribe button, video card, mini-player, Shorts rail |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `expo-video` + Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, 16:9 thumbnails + mini-player drag-down + Shorts rail + Haptics |
 | `preview.md` | Link to the interactive design token catalog on the Spectr gallery |
 
 ## Signature Moves

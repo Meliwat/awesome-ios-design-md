@@ -9,6 +9,7 @@ Design system docs inspired by the [Figma iOS app](https://apps.apple.com/us/app
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, file card, cube avatar, comment pin, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated spring transitions |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, brand-cube avatars + trailing cursors + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery/figma](https://www.spectr.to/gallery/figma) |
 
 ## Signature Moves

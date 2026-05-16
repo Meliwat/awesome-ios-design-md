@@ -9,6 +9,7 @@ Design system docs inspired by the [Apple Music iOS app](https://apps.apple.com/
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` extensions, Play button, album tile, mini-player, Now Playing, time-synced lyrics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `expo-audio` + Reanimated + BlurView |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, time-synced lyrics + Palette gradient + Haptics |
 | `preview.md` | Link to the interactive design token catalog on the Spectr gallery |
 
 ## Signature Moves

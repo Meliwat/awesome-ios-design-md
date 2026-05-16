@@ -9,6 +9,7 @@ Design system docs inspired by the [Headspace iOS app](https://apps.apple.com/us
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, breathing sphere, Aurora gradient, streak ring, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated breath cycle + streak ring |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, breathing meditation sphere (12s 4-2-4-2 cycle) + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves

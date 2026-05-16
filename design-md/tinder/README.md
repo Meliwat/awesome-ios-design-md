@@ -9,6 +9,7 @@ Design system docs inspired by the [Tinder iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, swipe card with drag + stamps, action bar, match screen |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, Reanimated swipe card, Gesture Handler, match screen |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, rotated swipe-card stack + 5-button action bar + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery |
 
 ## Signature Moves

@@ -9,6 +9,7 @@ Design system docs inspired by the [Google Maps iOS app](https://apps.apple.com/
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, MapKit renderer, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `react-native-maps`, Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, map-as-hero + floating bottom-sheet drawer + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery |
 
 ## Signature Moves

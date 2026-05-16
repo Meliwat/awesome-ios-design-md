@@ -9,6 +9,7 @@ Design system docs inspired by the [Robinhood iOS app](https://apps.apple.com/us
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, components, haptics, Swift Charts |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, gesture-based chart scrubber |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, Canvas portfolio chart + draggable scrubber + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 | `README.md` | This file — summary, signature moves, brand sources |
 

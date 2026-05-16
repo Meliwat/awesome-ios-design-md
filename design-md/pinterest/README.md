@@ -9,6 +9,7 @@ Design system docs inspired by the [Pinterest iOS app](https://apps.apple.com/us
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, masonry grid, Save button, pin detail |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `MasonryFlashList`, Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, `LazyVerticalStaggeredGrid` masonry + Haptics |
 | `preview.md` | Link to the interactive design token catalog on the Spectr gallery |
 
 ## Signature Moves
