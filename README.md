@@ -1,27 +1,48 @@
 <div align="center">
-    <strong>Curated collection of DESIGN.md files inspired by the best iOS apps.</strong>
-    <br />
-    <br />
-
-</div>
-
-<div align="center">
-
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![DESIGN.md Count](https://img.shields.io/badge/apps-100-10b981?style=classic)
-![Platform](https://img.shields.io/badge/platform-iOS-000000?style=classic&logo=apple)
-![Frameworks](https://img.shields.io/badge/frameworks-SwiftUI%20%2B%20Expo-informational?style=classic)
-![License](https://img.shields.io/badge/license-MIT-blue?style=classic)
-
-</div>
 
 # Awesome iOS DESIGN.md
 
-> **Want a screen that's not here?** Visit **[www.spectr.to](https://www.spectr.to)** to request or generate your own.
+**Production-grade design systems for the 100 best apps.**
+**Framework-neutral plus SwiftUI, Expo, and Jetpack Compose. Hand one to your AI agent — ship pixel-matched UI.**
 
-> Inspired by the original [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) concept, reimagined for native iOS. All trademarks, logos, and visual identities referenced here remain the property of their respective owners. These documents exist so AI agents can generate iOS UI that feels at home on the platform.
+<br/>
 
-Copy a DESIGN.md (or one of the framework-specific companions) into your Xcode or Expo project, tell your AI agent "build me a screen that looks like this" and get SwiftUI / React Native code that actually matches the reference app — fonts, spacing, motion, haptics, and all.
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Apps](https://img.shields.io/badge/apps-100-10b981?style=flat-square)](#collection)
+[![Flavors](https://img.shields.io/badge/flavors-neutral%20%C2%B7%20SwiftUI%20%C2%B7%20Expo%20%C2%B7%20Compose-6E56CF?style=flat-square)](#four-flavors-per-app)
+[![Live gallery](https://img.shields.io/badge/live%20gallery-spectr.to-0A84FF?style=flat-square)](https://www.spectr.to/gallery)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-22C55E?style=flat-square)](CONTRIBUTING.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+
+<br/>
+
+[**Browse the live gallery**](https://www.spectr.to/gallery) &nbsp;·&nbsp; [**Quick start**](#quick-start) &nbsp;·&nbsp; [**The 100 apps**](#collection) &nbsp;·&nbsp; [**Request an app**](https://github.com/Meliwat/awesome-ios-design-md/issues/new/choose)
+
+</div>
+
+---
+
+Hand your AI coding agent a `DESIGN.md` and it stops guessing. Each file is a complete, reverse-engineered design system for a real app — **exact hex values, full type ramps, component states, motion curves, and haptics** — in plain markdown that Claude, Cursor, Codex, and Stitch read natively. No Figma exports. No JSON. No tooling. No setup.
+
+> **Want an app that's not here?** [Request it in one click](https://github.com/Meliwat/awesome-ios-design-md/issues/new/choose) — or generate your own from a screen recording at **[www.spectr.to](https://www.spectr.to)**.
+
+> Inspired by [awesome-design-md](https://github.com/VoltAgent/awesome-design-md), reimagined for native mobile. All trademarks, logos, and visual identities remain the property of their respective owners — these documents exist so agents can generate UI that feels native to each platform.
+
+## Quick start
+
+1. **Pick a pack** — the framework-neutral `DESIGN.md`, or the companion that matches your stack:
+
+   ```bash
+   curl -O https://raw.githubusercontent.com/Meliwat/awesome-ios-design-md/main/design-md/spotify/DESIGN-swiftui.md
+   ```
+
+2. **Drop it in** your project root, next to `AGENTS.md` / `CLAUDE.md`.
+
+3. **Prompt your agent:**
+
+   > *"Build the Now Playing screen using `DESIGN-swiftui.md` for all styling — match the palette, type ramp, spacing, and motion exactly."*
+
+Your agent now has the `#121212` canvas, the Spotify-green play button, the 4/8pt grid, the spring curves, and the haptics — not a vibe, the actual spec.
 
 ## What is DESIGN.md?
 
@@ -59,7 +80,7 @@ Every file follows the [Stitch DESIGN.md format](https://stitch.withgoogle.com/d
 | 6 | Depth & Elevation | Shadows, materials (`.regularMaterial`, `.thin`), blurs, surface hierarchy |
 | 7 | Do's and Don'ts | Design guardrails aligned with Apple's HIG |
 | 8 | Responsive Behavior | Device sizes, Dynamic Type, landscape, iPad adaptation, touch targets |
-| 9 | Agent Prompt Guide | Quick color reference, ready-to-use SwiftUI / Expo prompts |
+| 9 | Agent Prompt Guide | Quick color reference + ready-to-use SwiftUI / Expo / Compose prompts |
 
 Each app folder includes:
 
@@ -72,13 +93,18 @@ Each app folder includes:
 | `README.md` | Pack overview, signature moves, brand sources |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
-### How to Use
-
-1. Copy an app's `DESIGN.md` (or the framework-specific companion) into your project root, next to `AGENTS.md` or `CLAUDE.md`
-2. Tell your AI agent to use it: *"Build the feed screen using DESIGN-swiftui.md for styling."*
-3. Ship pixel-matched UI.
-
 ## Collection
+
+**100 packs across 11 categories.** Every entry links to its folder; tap any phone in the **[live gallery](https://www.spectr.to/gallery)** to see the tokens rendered.
+
+| Category | | Category | |
+|---|--:|---|--:|
+| [Social & Community](#social--community) | 15 | [Shopping & Finance](#shopping--finance) | 13 |
+| [Messaging](#messaging) | 8 | [Productivity](#productivity) | 13 |
+| [Music & Audio](#music--audio) | 6 | [Dating](#dating) | 5 |
+| [Video & Streaming](#video--streaming) | 7 | [AI](#ai) | 6 |
+| [Food & Delivery](#food--delivery) | 6 | [Health & Utility](#health--utility) | 11 |
+| [Travel & Mobility](#travel--mobility) | 10 | **Total** | **100** |
 
 ### Social & Community
 
@@ -213,22 +239,29 @@ Each app folder includes:
 - [**Flo**](design-md/flo/) — Cycle tracking. Flo Coral `#FF6B81` + lavender `#C5B3E6`, the rotating cycle-phase wheel, symptom-log chips, reassuring prediction cards, soft rounded surfaces
 - [**AllTrails**](design-md/alltrails/) — Hiking + trails. AllTrails Green `#428000`, topo-map base, trail cards with the difficulty color scale (easy/moderate/hard) + length/elevation stats, route-trace draw
 
-## Request an App
-
-[Open a GitHub issue](https://github.com/Meliwat/awesome-ios-design-md/issues/new) with the App Store link and a few reference screenshots.
-
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions are welcome and genuinely valued — see **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full guide.
 
-- **Improve existing files**: Fix wrong tokens, add missing states, sharpen descriptions, update token values against current app builds
-- **Request an app**: Open an issue with screenshots
-- **Report issues**: If something looks off vs. the real app, let us know
+| I want to… | Do this |
+|---|---|
+| **Request an app** | [Open a request](https://github.com/Meliwat/awesome-ios-design-md/issues/new?template=request-an-app.yml) — app name, store link, a few screenshots |
+| **Fix a wrong token** | [Report it](https://github.com/Meliwat/awesome-ios-design-md/issues/new?template=token-fix.yml), or open a PR with before/after rationale |
+| **Add states or sharpen a spec** | PR against the app's `DESIGN.md` (and its framework companions) |
+| **Generate your own** | Drop a screen recording into **[www.spectr.to](https://www.spectr.to)** |
+
+Quality bar: values come from real builds, not marketing shots. Document light **and** dark. Keep HIG/Material correctness (44pt targets, Dynamic Type, safe areas).
+
+## Star history
+
+If these packs save you time, a star helps others find them.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Meliwat/awesome-ios-design-md&type=Date)](https://star-history.com/#Meliwat/awesome-ios-design-md&Date)
 
 ## License
 
-MIT License — see [LICENSE](LICENSE)
+**MIT** — see [LICENSE](LICENSE).
 
-This repository is a curated collection of design system documents extracted from publicly available iOS apps. All DESIGN.md files are provided "as is" without warranty. The extracted tokens represent values observable in live builds, public brand documentation, and App Store screenshots. We do not claim ownership of any app's visual identity. These documents exist to help AI agents generate consistent iOS UI.
+This repository is a curated collection of design-system documents describing publicly available apps. All files are provided "as is" without warranty. Tokens represent values observable in live builds, public brand documentation, and store screenshots. We claim no ownership of any app's visual identity — these documents exist solely to help AI agents generate consistent, platform-native UI.
 
-Brand names, logos, proprietary typefaces (TT Norms Pro, Uber Move, Airbnb Cereal, Spotify Mix, Feather Bold, Instagram Sans) remain the property of their respective owners and must be licensed separately where required.
+Brand names, logos, and proprietary typefaces (TT Norms Pro, Uber Move, Airbnb Cereal, Spotify Mix, Feather Bold, Instagram Sans, and others) remain the property of their respective owners and must be licensed separately where required.

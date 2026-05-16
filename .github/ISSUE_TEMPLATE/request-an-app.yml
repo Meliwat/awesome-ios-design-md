@@ -1,0 +1,52 @@
+name: "Request an app"
+description: "Suggest an app you'd like a DESIGN.md pack for."
+title: "[Request] <App name>"
+labels: ["app request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! The more reference material you provide, the faster and more accurate the pack will be.
+        In a hurry? You can generate a pack yourself from a screen recording at **[www.spectr.to](https://www.spectr.to)**.
+  - type: input
+    id: app-name
+    attributes:
+      label: App name
+      placeholder: "e.g. Monzo"
+    validations:
+      required: true
+  - type: input
+    id: store-link
+    attributes:
+      label: Store / website link
+      description: "App Store, Play Store, or official website."
+      placeholder: "https://apps.apple.com/app/..."
+    validations:
+      required: true
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Which flavors matter most to you?
+      multiple: true
+      options:
+        - "Framework-neutral (DESIGN.md)"
+        - "SwiftUI"
+        - "Expo / React Native"
+        - "Jetpack Compose"
+    validations:
+      required: true
+  - type: textarea
+    id: signature
+    attributes:
+      label: What makes this app's design distinctive?
+      description: "The signature moves — a color story, a hero component, a motion, a layout. This anchors the pack."
+      placeholder: "e.g. coral accent, the hot-coral metal card, the multi-currency balance tiles, the analytics donut…"
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Reference screenshots
+      description: "Drag in a few — light AND dark mode if the app has both. Key screens beat many similar ones."
+    validations:
+      required: false
