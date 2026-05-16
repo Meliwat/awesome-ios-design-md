@@ -9,6 +9,7 @@ Design system docs inspired by the [Strava iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, feed card, route polyline, kudos confetti |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated kudos animation |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, haloed route polyline + 3-up stat grid + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves

@@ -9,6 +9,7 @@ Design system docs inspired by the [Notion iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, `ViewModifier`s, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, StyleSheet, Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, block editor + `/` command palette + Haptics |
 | `preview.md` | Link to the interactive design token catalog on Spectr |
 
 ## Signature Moves

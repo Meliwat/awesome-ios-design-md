@@ -9,6 +9,7 @@ Design system docs inspired by the [WhatsApp iOS app](https://apps.apple.com/us/
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, `ViewModifier`s, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, StyleSheet, Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, voice-waveform + blue-tick read receipts + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery preview |
 
 ## Signature Moves

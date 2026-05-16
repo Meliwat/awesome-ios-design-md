@@ -9,6 +9,7 @@ Design system docs inspired by the [MyFitnessPal iOS app](https://apps.apple.com
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, calorie ring, macro donut, FAB, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, `react-native-svg` ring, Reanimated |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, semantic color-flip calorie ring + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery/myfitnesspal](https://www.spectr.to/gallery/myfitnesspal) |
 
 ## Signature Moves

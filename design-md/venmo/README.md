@@ -9,6 +9,7 @@ Design system docs inspired by the [Venmo iOS app](https://apps.apple.com/us/app
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, feed row, Pay/Request split pill, balance card, animated checkmark |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, Reanimated, SVG checkmark, `expo-haptics` |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, public emoji transaction feed + Pay/Request split pill + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery |
 
 ## Signature Moves

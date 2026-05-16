@@ -9,6 +9,7 @@ Design system docs inspired by the [WHOOP iOS app](https://apps.apple.com/us/app
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, Recovery ring, Strain bar, Sleep stage chart, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, SVG ring with Reanimated, Skia heart-rate trace |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, Recovery-ring red→yellow→green interpolation + neon glows + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery/whoop](https://www.spectr.to/gallery/whoop) |
 
 ## Signature Moves

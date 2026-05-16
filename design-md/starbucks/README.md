@@ -9,6 +9,7 @@ Design system docs inspired by the [Starbucks iOS app](https://apps.apple.com/us
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, Stars ring, size selector, category card, pump stepper |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, Reanimated SVG Stars ring, pump stepper, scan-to-pay |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, gold Stars progress ring + size selector + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery |
 
 ## Signature Moves

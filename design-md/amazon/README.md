@@ -9,6 +9,7 @@ Design system docs inspired by the [Amazon iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, top nav, CTA buttons, PDP price block, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, top nav, CTA buttons, Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, add-to-cart toast + cart-badge bump + Haptics |
 | `preview.md` | Link to the interactive Spectr gallery |
 
 ## Signature Moves

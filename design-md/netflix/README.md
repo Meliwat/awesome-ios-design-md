@@ -9,6 +9,7 @@ Design system docs inspired by the [Netflix iOS app](https://apps.apple.com/us/a
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, Play button, poster rows, Top 10 numeral overlay, hero trailer, profile picker |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `expo-video` + Reanimated + Haptics |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, hero ExoPlayer trailer + Top 10 numerals + Haptics |
 | `preview.md` | Link to the interactive design token catalog on the Spectr gallery |
 
 ## Signature Moves

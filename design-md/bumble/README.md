@@ -9,6 +9,7 @@ Design system docs inspired by the [Bumble iOS app](https://apps.apple.com/us/ap
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, components, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, hexagon helper |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, Date/BFF/Bizz mode switching + Haptics |
 | `README.md` | This file — overview, signatures, sources |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 

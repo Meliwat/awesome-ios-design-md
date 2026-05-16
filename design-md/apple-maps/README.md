@@ -9,6 +9,7 @@ Design system docs inspired by the [Apple Maps iOS app](https://apps.apple.com/u
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, components, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, sliding bottom-sheet detents + pulsing location puck + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves

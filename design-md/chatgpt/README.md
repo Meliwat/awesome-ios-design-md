@@ -9,6 +9,7 @@ Design system docs inspired by the [ChatGPT iOS app](https://apps.apple.com/us/a
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, `ViewModifier`s, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, StyleSheet, Reanimated + Haptics + Markdown |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, full-screen voice-mode sphere + Haptics |
 | `preview.md` | Link to the interactive design token catalog on Spectr |
 
 ## Signature Moves

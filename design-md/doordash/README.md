@@ -7,6 +7,7 @@
 | File | Description |
 |------|-------------|
 | `DESIGN.md` | Complete design system documentation (9 sections) |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, floating checkout CTA + order-placed confetti + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 Use [DESIGN.md](DESIGN.md) as a reference for AI agents (Claude, Cursor, Codex, Stitch) to generate SwiftUI or UIKit UI that matches the DoorDash iOS design language.

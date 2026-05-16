@@ -9,6 +9,7 @@ Design system docs inspired by the [Apple Wallet iOS app](https://apps.apple.com
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, card stack, Apple Card face, haptics |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, themed components, Reanimated card stack |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, card-stack physics + Apple Pay handoff + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves

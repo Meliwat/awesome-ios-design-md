@@ -9,6 +9,7 @@ Design system docs inspired by the [Uber iOS app](https://apps.apple.com/us/app/
 | `DESIGN.md` | Framework-neutral design spec (9 sections) |
 | `DESIGN-swiftui.md` | SwiftUI implementation — `Color` / `Font` extensions, map integration, sample views |
 | `DESIGN-expo.md` | Expo / React Native implementation — design tokens, `react-native-maps`, `@gorhom/bottom-sheet`, Reanimated |
+| `DESIGN-android.md` | Jetpack Compose implementation — `Color` tokens, Material 3 `Typography`, composables, map-as-hero + Base tokens + Haptics |
 | `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
 
 ## Signature Moves
