@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Browse the live gallery
+    url: https://www.spectr.to/gallery
+    about: See every pack's tokens rendered in an interactive iPhone frame.
+  - name: Generate your own pack
+    url: https://www.spectr.to
+    about: Turn a screen recording into a DESIGN.md pack — no waiting on a request.

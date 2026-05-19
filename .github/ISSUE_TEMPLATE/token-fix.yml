@@ -1,0 +1,49 @@
+name: "Report a wrong token"
+description: "A hex value, size, weight, or spec that doesn't match the live app."
+title: "[Fix] <App> — <what's wrong>"
+labels: ["token fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Small accuracy fixes are the most valuable contributions here — design systems drift as apps ship updates. Thank you.
+  - type: input
+    id: app
+    attributes:
+      label: App
+      placeholder: "e.g. spotify"
+    validations:
+      required: true
+  - type: dropdown
+    id: file
+    attributes:
+      label: Which file?
+      options:
+        - "DESIGN.md"
+        - "DESIGN-swiftui.md"
+        - "DESIGN-expo.md"
+        - "DESIGN-android.md"
+        - "Multiple / not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What's there now
+      placeholder: "e.g. Canvas listed as #181818"
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should be
+      placeholder: "e.g. Canvas is #121212"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Where you observed it
+      description: "A screenshot of the live build, a sampled pixel, or public brand docs. Helps us verify fast."
+    validations:
+      required: false
