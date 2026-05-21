@@ -2,11 +2,16 @@
 
 Fast, themeable chat. Telegram Blue `#0088CC`, 17pt bubbles with 6pt notch tails, silent-send long-press, Lottie animated emoji, floating voice mini-player
 
-The complete **Telegram** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Telegram** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Telegram spec](https://www.spectr.to/gallery/telegram)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/telegram](https://www.spectr.to/gallery/telegram)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/telegram](https://www.spectr.to/gallery/telegram)**
 
 ---
 

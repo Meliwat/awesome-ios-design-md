@@ -2,11 +2,16 @@
 
 project & issue tracking. Atlassian-neutral canvas (light `#FFFFFF`/`#F7F8F9`, dark `#1D2125`) with the single brand Jira Blue `#0052CC` for actions, Navy `#172B4D` ink, semantic status lozenges, and the drag-to-transition sprint board.
 
-The complete **Jira** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Jira** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Jira spec](https://www.spectr.to/gallery/jira)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/jira](https://www.spectr.to/gallery/jira)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/jira](https://www.spectr.to/gallery/jira)**
 
 ---
 

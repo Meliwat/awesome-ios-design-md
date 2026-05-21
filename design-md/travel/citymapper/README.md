@@ -2,11 +2,16 @@
 
 Multimodal transit and live navigation. Theme-invariant mode colors (walk `#00B894`, bus `#E8453C`, tube `#2B5BFF`), the colored leg strip, and the shape-locked green GO pill `#00C281`, on a deep blue-black `#0C0E14` dark canvas.
 
-The complete **Citymapper** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Citymapper** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Citymapper spec](https://www.spectr.to/gallery/citymapper)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/citymapper](https://www.spectr.to/gallery/citymapper)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/citymapper](https://www.spectr.to/gallery/citymapper)**
 
 ---
 

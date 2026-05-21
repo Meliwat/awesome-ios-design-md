@@ -2,11 +2,16 @@
 
 Apple's native navigation. Cream parchment cartography `#F6F1E6` land + `#B9D9EB` water, Maps Blue `#0A84FF` directions polyline, pulsing current-location puck, `.regularMaterial` blur on the sliding search card (88/50/full detents), SF Pro tabular figures
 
-The complete **Apple Maps** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Apple Maps** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Apple Maps spec](https://www.spectr.to/gallery/apple-maps)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/apple-maps](https://www.spectr.to/gallery/apple-maps)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/apple-maps](https://www.spectr.to/gallery/apple-maps)**
 
 ---
 

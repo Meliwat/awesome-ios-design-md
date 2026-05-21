@@ -2,11 +2,16 @@
 
 bold, deal-driven QSR loyalty and mobile-order platform. A two-color Golden Arches Yellow (#FFC72C, always with #1A1A1A text) and McDonald's Red (#DA291C) system over a near-black canvas (#121212), with a points-hero rewards card, a product-photo deals grid, and an elevated yellow Order FAB.
 
-The complete **McDonald's** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Mcdonalds** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full McDonald's spec](https://www.spectr.to/gallery/mcdonalds)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/mcdonalds](https://www.spectr.to/gallery/mcdonalds)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/mcdonalds](https://www.spectr.to/gallery/mcdonalds)**
 
 ---
 

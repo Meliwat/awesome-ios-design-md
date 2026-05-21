@@ -2,11 +2,16 @@
 
 audio-first podcast player with Smart Speed. Overcast Orange `#FC7E0F` on warm paper-cream `#FBFAF6` (or true dark `#121212`), an outlined orange-ring play button, and first-class Smart Speed / Voice Boost toggles.
 
-The complete **Overcast** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Overcast** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Overcast spec](https://www.spectr.to/gallery/overcast)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/overcast](https://www.spectr.to/gallery/overcast)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/overcast](https://www.spectr.to/gallery/overcast)**
 
 ---
 

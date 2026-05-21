@@ -2,11 +2,16 @@
 
 Airline travel concierge, boarding-pass-first. Navy→red boarding pass (Delta Blue `#003268` → widget red `#C8102E`), on-time green `#1E8E5A` status timeline, SkyMiles gold `#C99700`.
 
-The complete **Delta** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Delta** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Delta spec](https://www.spectr.to/gallery/delta)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/delta](https://www.spectr.to/gallery/delta)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/delta](https://www.spectr.to/gallery/delta)**
 
 ---
 

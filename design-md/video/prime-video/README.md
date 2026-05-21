@@ -2,11 +2,16 @@
 
 Video on demand. Prime Blue `#00A8E1` on Amazon blue-slate `#0F171E`, hero billboard, the X-Ray cast slide-up overlay, channel rows
 
-The complete **Prime Video** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Prime Video** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Prime Video spec](https://www.spectr.to/gallery/prime-video)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/prime-video](https://www.spectr.to/gallery/prime-video)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/prime-video](https://www.spectr.to/gallery/prime-video)**
 
 ---
 

@@ -2,11 +2,16 @@
 
 Food delivery. Grubhub Red `#F63440` primary action (pressed `#D2202B`) + Grubhub Orange `#FF8000` for deals and savings + a gold `#FFB81C` Grubhub+ Perks badge, wide 16:9 restaurant photography in 14pt rounded cards, a green rating star `#18A957`, and a live order-tracking timeline on a calm Track Blue `#00A0DF` accent over a warm `#121212` dark canvas
 
-The complete **Grubhub** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Grubhub** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Grubhub spec](https://www.spectr.to/gallery/grubhub)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/grubhub](https://www.spectr.to/gallery/grubhub)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/grubhub](https://www.spectr.to/gallery/grubhub)**
 
 ---
 

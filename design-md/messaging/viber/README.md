@@ -2,11 +2,16 @@
 
 Rakuten's call-first messenger. Single-brand Viber Purple (#7360F2) outgoing bubbles, gray incoming (#EDEBF5 / #26232F), the three-state check receipt (gray → gray → violet #8F7DF7 seen), a purple→deep-violet (#59267C) free-call banner, and an aubergine-tinted (#121118) dark canvas.
 
-The complete **Viber** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Viber** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Viber spec](https://www.spectr.to/gallery/viber)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/viber](https://www.spectr.to/gallery/viber)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/viber](https://www.spectr.to/gallery/viber)**
 
 ---
 

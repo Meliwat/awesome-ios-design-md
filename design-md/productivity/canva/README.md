@@ -2,11 +2,16 @@
 
 Design and creativity tool. Bright workspace (#FFFFFF / dark #18191B) with the cyan-to-purple brand gradient (#00C4CC to #7D2AE8) on the logo, primary CTA and a centered lifted create FAB; full-color template galleries with gold Pro badges (#FFC24B).
 
-The complete **Canva** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Canva** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Canva spec](https://www.spectr.to/gallery/canva)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/canva](https://www.spectr.to/gallery/canva)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/canva](https://www.spectr.to/gallery/canva)**
 
 ---
 

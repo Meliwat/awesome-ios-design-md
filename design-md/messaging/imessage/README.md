@@ -2,11 +2,16 @@
 
 Apple's system messaging surface. Blue/gray bubble pair with outgoing iMessage Blue (#007AFF), SMS Green (#34C759) fallback, incoming gray (#E9E9EB / #26262A), the six-glyph tapback strip, pulsing typing dots, and true-black (#000000) OLED dark mode.
 
-The complete **iMessage** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Imessage** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full iMessage spec](https://www.spectr.to/gallery/imessage)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/imessage](https://www.spectr.to/gallery/imessage)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/imessage](https://www.spectr.to/gallery/imessage)**
 
 ---
 

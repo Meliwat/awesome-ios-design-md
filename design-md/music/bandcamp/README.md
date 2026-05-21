@@ -2,11 +2,16 @@
 
 Music marketplace, paper editorial. Light #FFFFFF and #F4F4F4 canvas where big square album art is the hero and a scarce Bandcamp Teal #1DA0C3 marks artist links, the buy price, and the collection; the signature is the album page with a name-your-price buy-and-support card and a social fan-collection feed.
 
-The complete **Bandcamp** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Bandcamp** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Bandcamp spec](https://www.spectr.to/gallery/bandcamp)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/bandcamp](https://www.spectr.to/gallery/bandcamp)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/bandcamp](https://www.spectr.to/gallery/bandcamp)**
 
 ---
 

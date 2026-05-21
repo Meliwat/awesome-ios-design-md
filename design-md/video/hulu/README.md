@@ -2,11 +2,16 @@
 
 Content-dense streaming. Electric Hulu Green `#1CE783` Watch CTA on near-black `#0B0C0F`, 16:9 tiles, hub chips, continue-watching progress
 
-The complete **Hulu** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Hulu** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Hulu spec](https://www.spectr.to/gallery/hulu)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/hulu](https://www.spectr.to/gallery/hulu)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/hulu](https://www.spectr.to/gallery/hulu)**
 
 ---
 

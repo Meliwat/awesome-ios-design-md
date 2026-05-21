@@ -2,11 +2,16 @@
 
 Premium streaming. Deep space-navy `#0A0E2A` starfield, Disney Blue `#0063E5` + glow `#1A75FF`, brand-portal tile row (Disney/Pixar/Marvel/Star Wars/Nat Geo), 16:9 rails
 
-The complete **Disney+** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Disney Plus** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Disney+ spec](https://www.spectr.to/gallery/disney-plus)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/disney-plus](https://www.spectr.to/gallery/disney-plus)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/disney-plus](https://www.spectr.to/gallery/disney-plus)**
 
 ---
 

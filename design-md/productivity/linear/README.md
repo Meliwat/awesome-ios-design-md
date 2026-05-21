@@ -2,11 +2,16 @@
 
 Fast issue tracker. Linear Purple `#5E6AD2` on near-OLED `#08090A`, ultra-dense issue list, the Cmd+K command menu, cycle bars, drawn status iconography
 
-The complete **Linear** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Linear** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Linear spec](https://www.spectr.to/gallery/linear)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/linear](https://www.spectr.to/gallery/linear)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/linear](https://www.spectr.to/gallery/linear)**
 
 ---
 

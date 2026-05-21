@@ -34,7 +34,7 @@ Hand your AI coding agent a `DESIGN.md` and it stops guessing. Each file is a co
 
 2. **Open the app you want** — e.g. [spectr.to/gallery/spotify](https://www.spectr.to/gallery/spotify).
 
-3. **Get the full pack** and drop it next to your `CLAUDE.md` / `AGENTS.md`, then prompt your agent:
+3. **Open its folder in this repo** — e.g. [`design-md/music/spotify/`](design-md/music/spotify/) — and grab the flavor you want. Drop it next to your `CLAUDE.md` / `AGENTS.md`, then prompt your agent:
 
    > *"Build the Now Playing screen using `DESIGN-swiftui.md` for all styling — match the palette, type ramp, spacing, and motion exactly."*
 
@@ -49,7 +49,7 @@ Your agent now has the `#121212` canvas, the Spotify-green play button, the 4/8p
 | `AGENTS.md` | Coding agents | How to build the project |
 | `DESIGN.md` | Design agents | How the app should look and feel |
 
-**The full DESIGN.md packs — colors, SF Pro type ramps, component specs, SF Symbol usage, Dynamic Type behavior, HIG-correct layouts, haptics and motion — are delivered through the [Spectr gallery](https://www.spectr.to/gallery).** This repo is the index and free screen preview for all 200.
+**The full DESIGN.md packs — colors, SF Pro type ramps, component specs, SF Symbol usage, Dynamic Type behavior, HIG-correct layouts, haptics and motion — are free in this repo.** Every app folder holds all four flavors. The [Spectr gallery](https://www.spectr.to/gallery) renders a live screen preview of each.
 
 ## Four flavors per app
 
@@ -86,8 +86,7 @@ Each app folder includes:
 | `DESIGN-swiftui.md` | SwiftUI implementation code |
 | `DESIGN-expo.md` | Expo / React Native implementation code |
 | `DESIGN-android.md` | Jetpack Compose (Material 3, Kotlin) implementation code |
-| `README.md` | Pack overview, signature moves, brand sources |
-| `preview.md` | Link to the interactive preview at [www.spectr.to/gallery](https://www.spectr.to/gallery) |
+| `README.md` | Pack overview, signature moves, brand sources, and links to all four flavors |
 
 ## Collection
 

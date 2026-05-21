@@ -2,11 +2,16 @@
 
 Big-box retail. Walmart Blue `#0071DC` + Spark Yellow `#FFC220`, the blue-on-yellow Rollback price tag, spark logo, category grid, pickup/delivery toggle
 
-The complete **Walmart** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Walmart** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full Walmart spec](https://www.spectr.to/gallery/walmart)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/walmart](https://www.spectr.to/gallery/walmart)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/walmart](https://www.spectr.to/gallery/walmart)**
 
 ---
 

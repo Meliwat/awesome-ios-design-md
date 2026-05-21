@@ -2,11 +2,16 @@
 
 work management & project OS. The colorful board IS the product: full-bleed saturated status cells (Done #00C875, Working on it #FDAB3D, Stuck #E2445C), a 6pt leading group-color stripe on every row, blue (#0073EA) as the only action color, and a deep-indigo night canvas (#181B34).
 
-The complete **monday.com** design system — the framework-neutral `DESIGN.md` plus **SwiftUI**, **Expo**, and **Jetpack Compose** companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt — is delivered through the Spectr gallery.
+The complete **Monday** design system — free. The framework-neutral `DESIGN.md` plus SwiftUI, Expo, and Jetpack Compose companions: screen-by-screen breakdown, full color & type system, component specs, motion curves, haptics, and a ready-to-paste AI-agent implementation prompt.
 
-### 👉 [Get the full monday.com spec](https://www.spectr.to/gallery/monday)
+## Files
 
-Free live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/monday](https://www.spectr.to/gallery/monday)**
+- [`DESIGN.md`](DESIGN.md) — Framework-neutral spec
+- [`DESIGN-swiftui.md`](DESIGN-swiftui.md) — SwiftUI implementation guide
+- [`DESIGN-expo.md`](DESIGN-expo.md) — Expo / React Native guide
+- [`DESIGN-android.md`](DESIGN-android.md) — Jetpack Compose (Android) guide
+
+Live preview of every screen, rendered in the browser: **[www.spectr.to/gallery/monday](https://www.spectr.to/gallery/monday)**
 
 ---
 
